@@ -175,7 +175,6 @@ alias pyhs="python -m http.server"
 alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
-#alias gitc="git clone $(xclip -o) ~/gitrepos/$(basename -s .git $(xclip -o)"
 
 ## CUSTOM FUNCTIONS
 
