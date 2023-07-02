@@ -188,6 +188,14 @@ function gitc
   end
 end
 
+function gitpush
+    set S $(printf '%s' "$argv")
+    git add .
+	git commit -m "$S"
+	git push origin
+end
+
+        
 function amazon
   set S $(printf '%s' "$argv" | tr ' ' '+')
   brave --guest "https://www.amazon.in/s?k="$S""
