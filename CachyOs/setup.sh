@@ -13,6 +13,19 @@ git clone "https://github.com/harshdeepcodes/dotfiles.git" ~/gitrepos/(basename 
 
 ## RICING
 
+
+sudo rm -r /usr/share/wallpapers
+curl -o ~/Pictures/wallpapers/blue-mountains-illustration.png https://images.unsplash.com/photo-1640690821278-c6aa1e1ccee3
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   WALLPAPER SETTED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
+
+
 rm ~/.config/hypr/hyprland.conf
 ln -s ~/gitrepos/dotfiles/CachyOs/hyprland.conf ~/.config/hypr/hyprland.conf
 
@@ -23,6 +36,7 @@ echo """
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
+
 
 sudo rm /usr/share/cachyos-fish-config/cachyos-config.fish
 sudo ln -s ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish  /usr/share/cachyos-fish-config/cachyos-config.fish
@@ -35,5 +49,4 @@ echo """
 
 """
 
-sudo rm -r /usr/share/wallpapers
-curl -o ~/Pictures/wallpapers/blue-mountains-illustration.png https://images.unsplash.com/photo-1640690821275-c6aa1e1ccee3
+
