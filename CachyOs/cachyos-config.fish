@@ -1,4 +1,4 @@
-﻿## Source from conf.d before our fish config
+﻿#### Source from conf.d before our fish config
 source /usr/share/cachyos-fish-config/conf.d/done.fish
 
 
