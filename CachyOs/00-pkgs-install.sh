@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pkgs=(
+    "spectacle"
 	"vim-clipboard"
 	"xclip"
 	"mpv"
@@ -12,5 +13,5 @@ pkgs=(
 	"cava"
 )
 
-paru ${pkgs[@]}
+paru -S --needed ${pkgs[@]}
 

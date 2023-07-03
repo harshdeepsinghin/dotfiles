@@ -50,3 +50,13 @@ echo """
 """
 
 
+sudo rm /etc/vimrc
+sudo ln -s ~/gitrepos/dotfiles/CachyOs/vimrc /etc/vimrc
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   VIM CONFIG UPDATED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
