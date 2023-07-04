@@ -1,7 +1,6 @@
 #!/bin/bash
 
 pkgs=(
-    "spectacle"
 	"vim-clipboard"
 	"xclip"
 	"mpv"
@@ -11,6 +10,7 @@ pkgs=(
 	"veracrypt"
 	"yt-dlp"
 	"cava"
+    "spotify-adblock-git"
 )
 
 paru -S --needed ${pkgs[@]}
