@@ -201,8 +201,6 @@ function gitc
       if [ $status = 0 ]
         mv $(find $CLONED_FOLDER -type d -name $FOLDER) .
         yes | rm -r $CLONED_FOLDER
-      else
-          pass
       end
     end
   else
