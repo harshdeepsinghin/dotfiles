@@ -8,7 +8,7 @@ mkdir ~/Pictures/wallpapers
 
 
 ## CLONING GITS
-git clone "git@github.com:harshdeepcodes/dotfiles.git" ~/gitrepos/(basename -s .git $S)
+git clone "git@github.com:harshdeepcodes/dotfiles.git" ~/gitrepos/
 
 
 ## RICING
@@ -27,7 +27,11 @@ echo """
 
 
 rm ~/.config/hypr/hyprland.conf
+rm ~/.config/hypr/slow.sh
+rm ~/.config/hypr/setup-scratch.sh
 ln -s ~/gitrepos/dotfiles/CachyOs/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -s ~/gitrepos/dotfiles/CachyOs/slow.sh ~/.config/hypr/slow.sh
+ln -s ~/gitrepos/dotfiles/CachyOs/setup-scratch.sh ~/.config/hypr/setup-scratch.sh
 
 echo """
 
@@ -38,7 +42,7 @@ echo """
 """
 
 rm ~/.config/waybar/config-hypr
-ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr
+ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr ~/.config/waybar/config-hypr
 
 echo """
 
