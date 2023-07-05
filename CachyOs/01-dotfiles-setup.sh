@@ -8,7 +8,7 @@ mkdir ~/Pictures/wallpapers
 
 
 ## CLONING GITS
-git clone "https://github.com/harshdeepcodes/dotfiles.git" ~/gitrepos/(basename -s .git $S)
+git clone "git@github.com:harshdeepcodes/dotfiles.git" ~/gitrepos/(basename -s .git $S)
 
 
 ## RICING
