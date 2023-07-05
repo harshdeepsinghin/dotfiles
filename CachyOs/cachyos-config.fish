@@ -161,6 +161,14 @@ if status --is-interactive
    fastfetch
 end
 
+
+# CUSTOM PATH ALIASES
+
+set -gx fishconfig ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish
+set -gx hyprconfig ~/gitrepos/dotfiles/CachyOs/hyprland.conf
+set -gx vimconfig ~/gitrepos/dotfiles/CachyOs/vimrc
+
+
 # CUSTOM ALIASES
 
 alias update="sudo pacman -Syyu"
@@ -175,6 +183,7 @@ alias pyhs="python -m http.server"
 alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
+alias mkcd="mkdir $1 && cd $1"
 
 ## CUSTOM FUNCTIONS
 
