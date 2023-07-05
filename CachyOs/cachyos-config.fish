@@ -197,11 +197,13 @@ function gitc
       set FOLDER $(basename $S)
       set CLONED_FOLDER $(basename -s .git $REPO)
       
-      echo $REPO
-      echo $FOLDER
-      echo $CLONED_FOLDER
+      git clone $REPO
+      if $status = 0
+        mv $(find $CLONED_FOLDER -type d -name $FOLDER) .
+        yes | rm $CLONED_FOLDER
+      else
+          continue
     end
-
   else
     echo "Copy a Github URL!!!"
   end
