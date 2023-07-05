@@ -37,6 +37,16 @@ echo """
 
 """
 
+rm ~/.config/waybar/config-hypr
+ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   WAYBAR CONFIG UPDATED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
 
 sudo rm /usr/share/cachyos-fish-config/cachyos-config.fish
 sudo ln -s ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish  /usr/share/cachyos-fish-config/cachyos-config.fish
