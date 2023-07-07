@@ -11,7 +11,7 @@ pkgs=(
 	"yt-dlp"
 	"cava"
     "spotify-adblock-git"
-    "nautilus"
+    "dolphin"
 )
 
 paru -S --needed ${pkgs[@]}
