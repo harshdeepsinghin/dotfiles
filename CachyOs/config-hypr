@@ -286,7 +286,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SOURCE@ toggle"
+        "on-click-right": "pactl set-sink-mute $(pactl get-default-sink) toggle"
     },
 
     "tray": {

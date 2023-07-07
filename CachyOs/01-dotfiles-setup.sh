@@ -38,16 +38,18 @@ echo """
 
 """
 
-#rm ~/.config/waybar/config-hypr
-#ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr ~/.config/waybar/config-hypr
+rm ~/.config/waybar/config-hypr
+rm ~/.config/waybar/style.css
+ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr ~/.config/waybar/config-hypr
+ln -s ~/gitrepos/dotfiles/CachyOs/style.css ~/.config/waybar/style.css
 
-#echo """
+echo """
 
-#+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-#!!!   WAYBAR CONFIG UPDATED   !!!
-#+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   WAYBAR CONFIG UPDATED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
-#"""
+"""
 
 sudo rm /usr/share/cachyos-fish-config/cachyos-config.fish
 sudo ln -s ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish  /usr/share/cachyos-fish-config/cachyos-config.fish

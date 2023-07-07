@@ -13,6 +13,8 @@ pkgs=(
     "spotify-adblock-git"
     "dolphin"
     "breeze-icons"
+    "pamixer"
+    "bluez-utils"
 )
 
 paru -S --needed ${pkgs[@]}
