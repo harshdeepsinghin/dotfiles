@@ -12,6 +12,7 @@ pkgs=(
 	"cava"
     "spotify-adblock-git"
     "dolphin"
+    "breeze-icons"
 )
 
 paru -S --needed ${pkgs[@]}
