@@ -5,12 +5,12 @@ source /usr/share/cachyos-fish-config/conf.d/done.fish
 ## Set values
 # Hide welcome message
 set fish_greeting
-set VIRTUAL_ENV_DISABLE_PROMPT "1"
+set VIRTUAL_ENV_DISABLE_PROMPT 1
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ## Export variable need for qt-theme
-if type "qtile" >> /dev/null 2>&1
-   set -x QT_QPA_PLATFORMTHEME "qt5ct"
+if type qtile >>/dev/null 2>&1
+    set -x QT_QPA_PLATFORMTHEME qt5ct
 end
 
 # Set settings for https://github.com/franciscolourenco/done
@@ -18,7 +18,7 @@ set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
 ## Enable Wayland support for different applications
-if [ "$XDG_SESSION_TYPE" = "wayland" ]
+if [ "$XDG_SESSION_TYPE" = wayland ]
     set -gx WAYLAND 1
     set -gx QT_QPA_PLATFORM 'wayland;xcb'
     set -gx GDK_BACKEND 'wayland,x11'
@@ -34,7 +34,7 @@ end
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in
 if test -f ~/.fish_profile
-  source ~/.fish_profile
+    source ~/.fish_profile
 end
 
 # Add ~/.local/bin to PATH
@@ -55,30 +55,31 @@ end
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
-  switch (commandline -t)
-  case "!"
-    commandline -t $history[1]; commandline -f repaint
-  case "*"
-    commandline -i !
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t $history[1]
+            commandline -f repaint
+        case "*"
+            commandline -i !
+    end
 end
 
 function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t ""
+            commandline -f history-token-search-backward
+        case "*"
+            commandline -i '$'
+    end
 end
 
-if [ "$fish_key_bindings" = fish_vi_key_bindings ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
+if [ "$fish_key_bindings" = fish_vi_key_bindings ]
+    bind -Minsert ! __history_previous_command
+    bind -Minsert '$' __history_previous_command_arguments
 else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
+    bind ! __history_previous_command
+    bind '$' __history_previous_command_arguments
 end
 
 # Fish command history
@@ -105,10 +106,10 @@ end
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias la='exa -a --color=always --group-directories-first --icons' # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons' # long format
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
+alias l.="exa -a | egrep '^\.'" # show only dotfiles
 
 # Common use
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -130,9 +131,9 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias hw='hwinfo --short'                                   # Hardware Info
-alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
-alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'          # List amount of -git packages
+alias hw='hwinfo --short' # Hardware Info
+alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 
 # Get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -158,7 +159,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 ## Run fastfetch if session is interactive
 if status --is-interactive
-   fastfetch
+    fastfetch
 end
 
 
@@ -195,60 +196,60 @@ alias mkcd="mkdir $1 && cd $1"
 ## CUSTOM FUNCTIONS
 
 function gitc
-  set S (xclip -o)
+    set S (xclip -o)
 
-  if string match -q '*github.com*' $S
-    git clone $S ~/gitrepos/(basename -s .git $S)
-    if [ $status -ne 0 ]
-      set REPO "https://github.com/$(echo $S | grep -oP "(?<=github\.com/)[^/]+/[^/]+" | head -n1).git"
-      set FOLDER $(basename $S)
-      set CLONED_FOLDER $(basename -s .git $REPO)
-      
-      git clone $REPO
-      if [ $status = 0 ]
-        mv $(find $CLONED_FOLDER -type d -name $FOLDER) .
-        yes | rm -r $CLONED_FOLDER
-      end
+    if string match -q '*github.com*' $S
+        git clone $S ~/gitrepos/(basename -s .git $S)
+        if [ $status -ne 0 ]
+            set REPO "https://github.com/$(echo $S | grep -oP "(?<=github\.com/)[^/]+/[^/]+" | head -n1).git"
+            set FOLDER $(basename $S)
+            set CLONED_FOLDER $(basename -s .git $REPO)
+
+            git clone $REPO
+            if [ $status = 0 ]
+                mv $(find $CLONED_FOLDER -type d -name $FOLDER) .
+                yes | rm -r $CLONED_FOLDER
+            end
+        end
+    else
+        echo "Copy a Github URL!!!"
     end
-  else
-    echo "Copy a Github URL!!!"
-  end
 end
 
 function gitpush
     set S $(printf '%s' "$argv")
     git add .
-	git commit -m "$S"
-	git push origin
+    git commit -m "$S"
+    git push origin
 end
 
-        
+
 function amazon
-  set S $(printf '%s' "$argv" | tr ' ' '+')
-  brave --guest "https://www.amazon.in/s?k="$S""
+    set S $(printf '%s' "$argv" | tr ' ' '+')
+    brave --guest "https://www.amazon.in/s?k="$S""
 end
 
 function bpsh
-  set S $(printf '%s' "$argv")
-  echo "#!/bin/bash" > $S && vim $S
+    set S $(printf '%s' "$argv")
+    echo "#!/bin/bash" >$S && vim $S
 end
 
 function bppy
-  set S $(printf '%s' "$argv")
-  echo "#!/bin/python" > $S && vim $S
+    set S $(printf '%s' "$argv")
+    echo "#!/bin/python" >$S && vim $S
 end
 
 function anonyt
-  set S $(printf '%s' "$argv" | tr ' ' '+')
-  brave --guest "https://www.youtube.com/results?search_query=$S"
+    set S $(printf '%s' "$argv" | tr ' ' '+')
+    brave --guest "https://www.youtube.com/results?search_query=$S"
 end
 
 
 function ytmusic
-        set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-        set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
-        set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
-        echo "
+    set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
+    echo "
 
 ---X---X---X---X---X---X---X---X---
 
@@ -259,14 +260,14 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-        mpv --no-video "$LINK"
+    mpv --no-video "$LINK"
 end
 
 function ytmax
-        set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-        set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
-        set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
-        echo "
+    set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
+    echo "
 
 ---X---X---X---X---X---X---X---X---
 
@@ -277,14 +278,14 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-        mpv "$LINK"
+    mpv "$LINK"
 end
 
 function ytuhd
-        set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-        set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
-        set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
-        echo "
+    set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
+    echo "
 
 ---X---X---X---X---X---X---X---X---
 
@@ -295,15 +296,15 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-        mpv --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio" "$LINK"
+    mpv --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio" "$LINK"
 
 end
 
 function ytfhd
-        set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-        set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
-        set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
-        echo "
+    set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
+    echo "
 
 ---X---X---X---X---X---X---X---X---
 
@@ -314,16 +315,16 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-        mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio" "$LINK"
+    mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio" "$LINK"
 
 end
 
 
 function ythd
-        set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-        set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
-        set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
-        echo "
+    set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
+    echo "
 
 ---X---X---X---X---X---X---X---X---
 
@@ -334,6 +335,49 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-        mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio" "$LINK"
+    mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio" "$LINK"
 
+end
+
+# function helpbash
+#   if $arg[1] = "loop"
+#     set A 0
+#     while [ $A = 0 ]
+#         set S $(read -P 'How to (in bash): ')
+#         if [ $S = 'EXIT']
+#             set A 1
+#         else
+#             brave --guest "https://www.google.com/search?q=How+to+"$(read)"+in+bash"
+#         end
+#     end
+#   else
+#     set S $(printf '%s' "$argv" | tr ' ' '+')
+#     brave --guest "https://www.google.com/search?q=How+to+"$S"+in+bash"
+#   end
+# end
+
+function helpbash
+    if test "$argv[1]" = "loop"
+      set A 0
+      while test $A = 0
+          set -p S (read -p 'How to (in bash): ')
+          if test "$S" = 'EXIT'
+              set A 1
+          else
+              set search_query "How+to+"(string escape "$S")"+in+bash"
+              brave --guest "https://www.google.com/search?q=$search_query"
+          end
+      end
+    else
+      set -p S (printf '%s' "$argv" | tr ' ' '+')
+      set search_query "How+to+"(string escape "$S")"+in+bash"
+      brave --guest "https://www.google.com/search?q=$search_query"
+    end
+  end
+  
+  
+
+function helpfish
+  set S $(printf '%s' "$argv" | tr ' ' '+')
+  brave --guest "https://www.google.com/search?q=How+to+"$S"+in+bash"
 end
