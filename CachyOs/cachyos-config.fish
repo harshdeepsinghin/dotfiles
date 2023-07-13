@@ -381,3 +381,15 @@ function helpfish
   set S $(printf '%s' "$argv" | tr ' ' '+')
   brave --guest "https://www.google.com/search?q=How+to+"$S"+in+bash"
 end
+
+function calc
+    set Q true
+    while [ $Q = 'true' ]
+        set K $(read)
+        if [ $K = "exit" ]
+            set Q false
+        else
+            math "$K"
+        end
+    end
+end
