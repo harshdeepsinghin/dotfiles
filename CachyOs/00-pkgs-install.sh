@@ -12,6 +12,7 @@ pkgs=(
 	"cava"
     "spotify-adblock-git"
     "dolphin"
+    "ffmpegthumbs"
     "breeze-icons"
     "pamixer"
     "bluez-utils"

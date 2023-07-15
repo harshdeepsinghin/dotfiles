@@ -245,7 +245,7 @@ function anonyt
 end
 
 
-function ytmusic
+function ytm
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
     set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
@@ -263,6 +263,17 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
     mpv --no-video "$LINK"
 end
 
+function ytmusic
+    set Q true
+    while [ $Q = 'true' ]
+        set K $(read)
+        if [ $K = "exit" ]
+            set Q false
+        else
+            ytm "$K"
+        end
+    end
+end
 function ytmax
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
     set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
