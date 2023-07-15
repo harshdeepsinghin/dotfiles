@@ -16,6 +16,7 @@ pkgs=(
     "breeze-icons"
     "pamixer"
     "bluez-utils"
+    "nomacs"
 )
 
 paru -S --needed ${pkgs[@]}
