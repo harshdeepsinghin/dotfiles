@@ -209,7 +209,7 @@
 
     "clock#date": {
         "interval": 1,
-        "format": "{:⏰%I:%M:%S   %e %b}", // Icon: calendar-alt
+        "format": "{:⏰%I:%M:%S   %e %b, %a}", // Icon: calendar-alt
         //"format": "{:%I:%M %p  %A %b %d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "today-format": "<b>{}</b>"
