@@ -17,6 +17,7 @@ pkgs=(
     "pamixer"
     "bluez-utils"
     "nomacs"
+    "p7zip"
 )
 
 paru -S --needed ${pkgs[@]}
