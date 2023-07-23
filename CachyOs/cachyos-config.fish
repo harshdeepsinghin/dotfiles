@@ -404,3 +404,11 @@ function calc
         end
     end
 end
+
+function btc
+    bluetoothctl remove 28:FA:19:F5:F8:28 || echo &&
+    bluetoothctl scan on &&
+    bluetoothctl pair 28:FA:19:F5:F8:28 &&
+    bluetoothctl connect 28:FA:19:F5:F8:28
+end
+
