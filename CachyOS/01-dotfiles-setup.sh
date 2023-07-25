@@ -28,7 +28,7 @@ echo """
 
 
 rm ~/.config/hypr/hyprland.conf
-ln -s ~/gitrepos/dotfiles/CachyOs/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -s ~/gitrepos/dotfiles/CachyOS/hyprland.conf ~/.config/hypr/hyprland.conf
 
 echo """
 
@@ -40,8 +40,8 @@ echo """
 
 rm ~/.config/waybar/config-hypr
 rm ~/.config/waybar/style.css
-ln -s ~/gitrepos/dotfiles/CachyOs/config-hypr ~/.config/waybar/config-hypr
-ln -s ~/gitrepos/dotfiles/CachyOs/style.css ~/.config/waybar/style.css
+ln -s ~/gitrepos/dotfiles/CachyOS/config-hypr ~/.config/waybar/config-hypr
+ln -s ~/gitrepos/dotfiles/CachyOS/style.css ~/.config/waybar/style.css
 
 echo """
 
@@ -52,7 +52,7 @@ echo """
 """
 
 sudo rm /usr/share/cachyos-fish-config/cachyos-config.fish
-sudo ln -s ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish  /usr/share/cachyos-fish-config/cachyos-config.fish
+sudo ln -s ~/gitrepos/dotfiles/CachyOS/cachyos-config.fish  /usr/share/cachyos-fish-config/cachyos-config.fish
 
 echo """
 
@@ -64,7 +64,7 @@ echo """
 
 
 sudo rm /etc/vimrc
-sudo ln -s ~/gitrepos/dotfiles/CachyOs/vimrc /etc/vimrc
+sudo ln -s ~/gitrepos/dotfiles/CachyOS/vimrc /etc/vimrc
 
 echo """
 

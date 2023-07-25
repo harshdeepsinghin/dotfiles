@@ -10,15 +10,15 @@ pkgs=(
 	"veracrypt"
 	"yt-dlp"
 	"cava"
-    "spotify-adblock-git"
-    "dolphin"
-    "ffmpegthumbs"
-    "breeze-icons"
-    "pamixer"
-    "bluez-utils"
-    "nomacs"
-    "p7zip"
+        "spotify-adblock-git"
+        "dolphin"
+        "ffmpegthumbs"
+        "breeze-icons"
+        "pamixer"
+        "bluez-utils"
+        "nomacs"
+        "p7zip"
 )
 
-paru -S --needed ${pkgs[@]}
+paru -S --needed --sudoloop ${pkgs[@]}
 
