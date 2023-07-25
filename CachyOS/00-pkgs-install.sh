@@ -20,5 +20,6 @@ pkgs=(
         "p7zip"
 )
 
-paru -S --needed --sudoloop ${pkgs[@]}
+sudo echo "Initializing sudo authentication for PARU..."
+paru -S --needed ${pkgs[@]}
 
