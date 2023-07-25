@@ -166,12 +166,12 @@ end
 # CUSTOM PATH ALIASES
 
 ## configs
-set -gx fishconfig ~/gitrepos/dotfiles/CachyOs/cachyos-config.fish
-set -gx hyprconfig ~/gitrepos/dotfiles/CachyOs/hyprland.conf
-set -gx vimconfig ~/gitrepos/dotfiles/CachyOs/vimrc
+set -gx fishconfig ~/gitrepos/dotfiles/CachyOS/cachyos-config.fish
+set -gx hyprconfig ~/gitrepos/dotfiles/CachyOS/hyprland.conf
+set -gx vimconfig ~/gitrepos/dotfiles/CachyOS/vimrc
 
 ## folders
-set -gx cachyrepo ~/gitrepos/dotfiles/CachyOs
+set -gx cachyrepo ~/gitrepos/dotfiles/CachyOS
 
 set -gx lin1 /mnt/seagate/lin1
 set -gx lin3 /mnt/seagate/lin3
