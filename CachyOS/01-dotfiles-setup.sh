@@ -16,8 +16,8 @@ git config --global gpg.format ssh
 git config --global commit.gpgsign true
 git config --global user.signingkey ~/.ssh/id_rsa.pub
 ssh -T git@github.com
-git clone "git@github.com:harshdeepsinghin/dotfiles.git" ~/gitrepos/
 
+cd ~/gitrepos/ && git clone "git@github.com:harshdeepsinghin/dotfiles.git"
 
 ## RICING
 
