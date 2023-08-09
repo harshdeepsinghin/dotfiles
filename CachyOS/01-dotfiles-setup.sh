@@ -5,6 +5,7 @@
 
 mkdir ~/gitrepos
 mkdir ~/Pictures/wallpapers
+sudo mkdir /mnt/seagate /mnt/seagate/lin1
 
 
 ## CLONING GITS
@@ -81,3 +82,7 @@ echo """
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
+
+## MISC
+
+sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf

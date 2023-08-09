@@ -196,7 +196,7 @@ alias mkcd="mkdir $1 && cd $1"
 ## CUSTOM FUNCTIONS
 
 function gitc
-    set S (xclip -o)
+    set S (wl-paste)
 
     if string match -q '*github.com*' $S
         git clone $S ~/gitrepos/(basename -s .git $S)
