@@ -11,7 +11,8 @@ wget "https://mirror.cachyos.org/ISO/kde/$(curl -s 'https://mirror.cachyos.org/I
 
 Run these lines:
 ```bash
-wget -O - https://raw.githubusercontent.com/harshdeepcodes/dotfiles/main/CachyOS/00-pkgs-install.sh | bash
-wget -O - https://raw.githubusercontent.com/harshdeepcodes/dotfiles/main/CachyOS/01-dotfiles-setup.sh | bash
-
+wget https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/main/CachyOS/00-pkgs-install.sh
+wget https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/main/CachyOS/01-dotfiles-setup.sh
+bash 00-pkgs-install.sh
+bash 01-dotfiles-setup.sh
 ```
