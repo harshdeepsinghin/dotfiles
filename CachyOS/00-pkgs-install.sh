@@ -18,6 +18,7 @@ pkgs=(
         "bluez-utils"
         "nomacs"
         "p7zip"
+        "feh"
 )
 
 sudo echo "Initializing sudo authentication for PARU..."
