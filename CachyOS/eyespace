@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while true; do
+    sleep 30m 
+    feh -F "https://harshdeepsingh.sirv.com/Scripted/rest_your_eyes.png" & sleep 5m && pkill feh;
+done
