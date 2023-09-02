@@ -5,7 +5,14 @@
 
 mkdir ~/gitrepos
 mkdir ~/Pictures/wallpapers
-sudo mkdir /mnt/seagate /mnt/seagate/lin1
+sudo mkdir -p /mnt/seagate/lin1
+
+echo "Have you configured the ssh keys?: " | read response
+if [[ $response == "y" || $response == "Y" ]]; then
+    continue
+else
+    exit 1
+fi
 
 
 ## CLONING GITS
@@ -86,3 +93,19 @@ echo """
 ## MISC
 
 sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
+
+## MANUAL WORK
+
+echo """
+
+For Automounting drives
+
+    sudo vim etc/fstab
+
+add below line in above file
+
+    UUID=your_hdd_uid /mnt/your_desired_hdd_path   ext4    defaults,nofail,x-systemd.device-timeout=10 0 2
+
+replace UID with your desired drive
+
+"""
