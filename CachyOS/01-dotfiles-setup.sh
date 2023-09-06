@@ -7,9 +7,9 @@ mkdir ~/gitrepos
 mkdir ~/Pictures/wallpapers
 sudo mkdir -p /mnt/seagate/lin1
 
-echo "Have you configured the ssh keys?: " | read response
+read -p "Have you configured the ssh keys?: " response
 if [[ $response == "y" || $response == "Y" ]]; then
-    continue
+    echo "All Good!"
 else
     exit 1
 fi
@@ -89,6 +89,12 @@ echo """
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
+
+## SCRIPTS
+
+sudo cp ~/gitrepos/dotfiles/CachyOS/eyespace /usr/bin/eyespace
+sudo chmod +x /usr/bin/eyespace
+
 
 ## MISC
 
