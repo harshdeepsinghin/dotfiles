@@ -99,6 +99,7 @@ sudo chmod +x /usr/bin/eyespace
 ## MISC
 
 sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
+sudo sed -i 's/GRUB_TIMEOUT=\'5\'/GRUB_TIMEOUT=\'1\'/g' /etc/default/grub
 
 ## MANUAL WORK
 
