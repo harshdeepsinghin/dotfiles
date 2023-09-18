@@ -23,7 +23,7 @@ alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
 alias mkcd="mkdir $1 && cd $1"
-alias code="vscodium $argv"
+alias code="codium $argv"
 
 ## CUSTOM FUNCTIONS
 
