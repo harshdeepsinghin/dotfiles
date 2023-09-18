@@ -11,8 +11,6 @@ pkgs=(
 	"yt-dlp"
         "p7zip"
 	"alfred"
-	"zsh-syntax-highlighting"
-	"zsh-autosuggestion"s
 )
 
 for i in ${pkgs[@]}; do
