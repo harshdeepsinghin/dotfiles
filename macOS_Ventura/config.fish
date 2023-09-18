@@ -28,7 +28,7 @@ alias code="vscodium $argv"
 ## CUSTOM FUNCTIONS
 
 function gitc
-    set S (wl-paste)
+    set S (pbpaste)
 
     if string match -q '*github.com*' $S
         git clone $S ~/gitrepos/(basename -s .git $S)
