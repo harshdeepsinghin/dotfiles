@@ -11,6 +11,8 @@ pkgs=(
 	"yt-dlp"
         "p7zip"
 	"alfred"
+	"iterm2"
+	"tutanota"
 )
 
 for i in ${pkgs[@]}; do
