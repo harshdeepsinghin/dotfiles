@@ -6,6 +6,7 @@ set -gx vimconfig ~/gitrepos/dotfiles/macOS_Ventura/vimrc
 
 ## folders
 set -gx macrepo ~/gitrepos/dotfiles/macOS_Ventura
+set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/COLLEGE/BTECH/
 
 
 # CUSTOM ALIASES
