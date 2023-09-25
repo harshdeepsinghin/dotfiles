@@ -6,6 +6,7 @@ pkgs=(
 	"mpv"
 	"obsidian"
 	"brave-browser"
+	"firefox"
 	"vscodium"
 	"veracrypt"
 	"yt-dlp"
@@ -13,6 +14,7 @@ pkgs=(
 	"alfred"
 	"iterm2"
 	"tutanota"
+	"neofetch"
 )
 
 for i in ${pkgs[@]}; do
