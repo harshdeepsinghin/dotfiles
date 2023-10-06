@@ -42,7 +42,7 @@ echo """
 
 
 rm ~/.config/fish/config.fish 
-ln -s ~/gitrepos/dotfiles/macOS_Ventura/config.fish ~/.config/fish/config.fish
+ln -s ~/gitrepos/dotfiles/macOS/config.fish ~/.config/fish/config.fish
 fish -c "fish_add_path opt/homebrew/bin/"
 fish -c "fish_update_completions"
 

@@ -3,11 +3,11 @@
 # CUSTOM PATHS
 
 ## configs
-set -gx fishconfig ~/gitrepos/dotfiles/macOS_Ventura/config.fish
-set -gx vimconfig ~/gitrepos/dotfiles/macOS_Ventura/vimrc
+set -gx fishconfig ~/gitrepos/dotfiles/macOS/config.fish
+set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 
 ## folders
-set -gx macrepo ~/gitrepos/dotfiles/macOS_Ventura
+set -gx macrepo ~/gitrepos/dotfiles/macOS
 set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/COLLEGE/BTECH/
 
 
