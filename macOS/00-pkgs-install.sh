@@ -14,6 +14,7 @@ pkgs=(
 	"alfred"
 	"iterm2"
 	"tutanota"
+	"audacity"
 	"neofetch"
 )
 
