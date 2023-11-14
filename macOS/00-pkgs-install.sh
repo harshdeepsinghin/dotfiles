@@ -17,6 +17,7 @@ pkgs=(
 	"audacity"
 	"neofetch"
 	"rectangle"
+	"latest"
 )
 
 for i in ${pkgs[@]}; do
