@@ -18,6 +18,7 @@ pkgs=(
 	"neofetch"
 	"rectangle"
 	"latest"
+	"alt-tab"
 )
 
 for i in ${pkgs[@]}; do

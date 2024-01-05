@@ -21,7 +21,7 @@ alias pip3in="pip3 install $1"
 alias pipun="pip uninstall $1"
 alias pip3un="pip3 uninstall $1"
 alias pwdc="pwd | pbcopy"
-alias pyhs="python3 -m http.server"
+alias pyhs="echo IP: $(ipconfig getifaddr en0) && python3 -m http.server"
 alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
@@ -240,4 +240,3 @@ function calc
         end
     end
 end
-
