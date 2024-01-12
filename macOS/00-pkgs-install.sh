@@ -18,6 +18,7 @@ pkgs=(
 	"neofetch"
 	"rectangle"
 	"latest"
+        "fzf"
 	"alt-tab"
 )
 
