@@ -407,9 +407,10 @@ function calc
 end
 
 function btc
-    bluetoothctl remove 28:FA:19:F5:F8:28 || echo &&
+    set BT "28:FA:19:F5:F8:28"
+    bluetoothctl remove $BT || echo &&
     bluetoothctl scan on &&
-    bluetoothctl pair 28:FA:19:F5:F8:28 &&
-    bluetoothctl connect 28:FA:19:F5:F8:28
+    bluetoothctl pair $BT &&
+    bluetoothctl connect $BT
 end
 
