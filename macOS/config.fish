@@ -8,7 +8,7 @@ set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 
 ## folders
 set -gx macrepo ~/gitrepos/dotfiles/macOS
-set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/COLLEGE/BTECH/
+set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/Academics/BTECH/Sem2/DSA
 
 
 # CUSTOM ALIASES
