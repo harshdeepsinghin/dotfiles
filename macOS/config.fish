@@ -37,7 +37,7 @@ function gitc
     if string match -q '*github.com*' $S
         git clone $S ~/gitrepos/(basename -s .git $S)
         if [ $status -ne 0 ]
-            set REPO "https://github.com/$(echo $S | grep -oP "(?<=github\.com/)[^/]+/[^/]+" | head -n1).git"
+            set REPO "https://github.com/$(echo $S | grep -o "(?<=github\.com/)[^/]+/[^/]+" | head -n1).git"
             set FOLDER $(basename $S)
             set CLONED_FOLDER $(basename -s .git $REPO)
 
