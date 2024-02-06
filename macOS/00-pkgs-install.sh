@@ -20,6 +20,7 @@ pkgs=(
 	"latest"
         "fzf"
 	"alt-tab"
+	"anki"
 )
 
 for i in ${pkgs[@]}; do
