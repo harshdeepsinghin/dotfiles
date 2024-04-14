@@ -27,7 +27,6 @@ alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
 alias code="codium $argv"
 alias mkcd="mkdir $argv && cd $argv"
-alias chalja="make $argv && ./$argv"
 
 
 ## CUSTOM FUNCTIONS
@@ -85,7 +84,7 @@ end
 
 function ytm
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S+lyrical+audio" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
@@ -241,4 +240,11 @@ function calc
             math "$K"
         end
     end
+end
+
+
+function chalo
+  set S $(printf '%s' "$argv")
+  gcc $S.c -o $S_exe
+  ./$S_exe
 end
