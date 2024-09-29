@@ -21,6 +21,8 @@ pkgs=(
         "fzf"
 	"alt-tab"
 	"anki"
+	"notion"
+	"notion-calendar"
 )
 
 for i in ${pkgs[@]}; do
