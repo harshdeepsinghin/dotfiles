@@ -8,6 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
   "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
     "dock": "right"
   },
   "show_copilot_suggestions": false,

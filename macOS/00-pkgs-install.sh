@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pkgs=(
+	"ente-auth"
 	"wget"
 	"fish"
 	"mpv"
