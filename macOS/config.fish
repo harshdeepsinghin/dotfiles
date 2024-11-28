@@ -27,6 +27,8 @@ alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
 alias code="codium $argv"
 alias mkcd="mkdir $argv && cd $argv"
+alias sleepoff="sudo pmset -a disablesleep 1"
+alias sleepon="sudo pmset -a disablesleep 0"
 
 
 ## CUSTOM FUNCTIONS
