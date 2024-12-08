@@ -21,7 +21,6 @@ pkgs=(
 	"latest"
         "fzf"
 	"alt-tab"
-	"anki"
 	"notion"
 	"notion-calendar"
 )
