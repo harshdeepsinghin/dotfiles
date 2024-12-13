@@ -22,6 +22,7 @@ alias pipun="pip uninstall $1"
 alias pip3un="pip3 uninstall $1"
 alias pwdc="pwd | pbcopy"
 alias pyhs="echo IP: $(ipconfig getifaddr en0) && python3 -m http.server"
+alias getip="ipconfig getifaddr en0"
 alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
@@ -65,7 +66,7 @@ end
 
 function amazon
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    brave --guest "https://www.amazon.in/s?k="$S""
+    open -na "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
 end
 
 function bpsh
@@ -80,7 +81,7 @@ end
 
 function anonyt
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    brave --guest "https://www.youtube.com/results?search_query=$S"
+    open -na "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
 end
 
 
@@ -249,4 +250,12 @@ function chalo
   set S $(printf '%s' "$argv")
   gcc $S.c -o $S_exe
   ./$S_exe
+end
+
+function whatis
+  set S $(printf '%s' "$argv")
+  open "https://google.com/search?q=$S"
+  open "https://www.youtube.com/results?search_query=$S"
+  open "https://en.wikipedia.org/wiki/Special:Search/$S"
+  open "https://chat.openai.com/?q=What+is+$S"
 end
