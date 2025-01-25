@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 
 ## CREATING DIRECTORIES
@@ -29,13 +29,12 @@ cd ~/gitrepos/ && git clone "git@github.com:harshdeepsinghin/dotfiles.git"
 ## RICING
 
 
-wget -nc -P ~/Pictures/wallpapers/ https://harshdeepsingh.sirv.com/Wallpapers/green-clouds-open-anime-minimal.png
-wget -nc -P ~/Pictures/wallpapers/ https://harshdeepsingh.sirv.com/Wallpapers/blue-mountains-illustration.png
+for i in $(curl -s "https://harshdeepsingh.sirv.com/Wallpapers/" | tr " " "\n" | grep "harshdeepsingh.sirv.com/Wallpapers/" | sed -e 's/\(^.*"\)\(.*\)\(".*$\)/\2/' |  cut -c 3-); do wget -nc -P ~/Pictures/wallpapers/ https://$i; done
 
 echo """
 
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-!!!   WALLPAPER DOWNLOADED   !!!
+!!!   WALLPAPERS DOWNLOADED   !!!
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
