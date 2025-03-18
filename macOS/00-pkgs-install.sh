@@ -24,6 +24,7 @@ pkgs=(
 	"anki"
 	"notion"
 	"notion-calendar"
+	"raycast"
 )
 
 for i in ${pkgs[@]}; do

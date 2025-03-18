@@ -259,3 +259,6 @@ function whatis
   open "https://en.wikipedia.org/wiki/Special:Search/$S"
   open "https://chat.openai.com/?q=What+is+$S"
 end
+
+set -Ux JAVA_HOME (/usr/libexec/java_home -v 11)
+set -gx JAVA_HOME (/usr/libexec/java_home -v 17)
