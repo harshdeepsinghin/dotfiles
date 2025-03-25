@@ -10,7 +10,6 @@ set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 set -gx macrepo ~/gitrepos/dotfiles/macOS
 set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/Academics/BTECH
 
-
 # CUSTOM ALIASES
 
 alias tarnow='tar -acf '
@@ -258,6 +257,13 @@ function whatis
   open "https://en.wikipedia.org/wiki/Special:Search/$S"
   open "https://chat.openai.com/?q=What+is+$S"
 end
+
+
+function clipgpt
+  set S $(pbpaste)
+  open "http://chat.openai.com/?q=$S"
+end
+
 
 set -Ux JAVA_HOME (/usr/libexec/java_home -v 11)
 set -gx JAVA_HOME (/usr/libexec/java_home -v 17)
