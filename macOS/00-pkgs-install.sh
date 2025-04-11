@@ -11,7 +11,7 @@ pkgs=(
 	"vscodium"
 	"veracrypt"
 	"yt-dlp"
-        "p7zip"
+    "p7zip"
 	"alfred"
 	"iterm2"
 	"tutanota"
@@ -19,11 +19,12 @@ pkgs=(
 	"neofetch"
 	"rectangle"
 	"latest"
-        "fzf"
+    "fzf"
 	"alt-tab"
 	"anki"
 	"notion"
 	"notion-calendar"
+	"coreutils"
 )
 
 for i in ${pkgs[@]}; do
