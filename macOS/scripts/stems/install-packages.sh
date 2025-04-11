@@ -1,19 +1,13 @@
 #!/bin/bash
 
-# Path to the file containing package names
-PACKAGE_FILE="packages.txt"
+# URL to the package list
+PACKAGE_URL="https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/refs/heads/main/macOS/misc/stems/packages.txt"
 
-# Check if the file exists
-if [[ ! -f "$PACKAGE_FILE" ]]; then
-    echo "Package list file not found!"
-    exit 1
-fi
-
-# Read the file and install packages using brew
-while read -r package; do
+# Fetch and install packages using brew
+curl -fsSL "$PACKAGE_URL" | while read -r package; do
     # Skip empty lines and comments
     [[ -z "$package" || "$package" =~ ^# ]] && continue
 
     echo "Installing $package..."
     brew install "$package"
-done < "$PACKAGE_FILE"
+done
