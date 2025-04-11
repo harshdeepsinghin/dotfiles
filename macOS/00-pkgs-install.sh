@@ -25,6 +25,7 @@ pkgs=(
 	"notion"
 	"notion-calendar"
 	"coreutils"
+	"tree"
 )
 
 for i in ${pkgs[@]}; do
