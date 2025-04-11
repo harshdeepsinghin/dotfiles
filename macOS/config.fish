@@ -8,7 +8,6 @@ set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 
 ## folders
 set -gx macrepo ~/gitrepos/dotfiles/macOS
-set -gx btech ~/Obsidian/mywellness/3_Pillars_of_Life/Wisdom/Academics/BTECH
 
 # CUSTOM ALIASES
 
@@ -267,3 +266,19 @@ end
 
 set -Ux JAVA_HOME (/usr/libexec/java_home -v 11)
 set -gx JAVA_HOME (/usr/libexec/java_home -v 17)
+
+function wavdl
+    if test (count $argv) -eq 0
+        echo "Usage: wavdl <song name>"
+        return 1
+    end
+
+    set -l query (string join " " $argv)
+    echo "🔍 Searching and downloading: $query"
+
+    yt-dlp --extract-audio \
+           --audio-format wav \
+           --output "%(title)s.%(ext)s" \
+           "ytsearch1:$query"
+end
+
