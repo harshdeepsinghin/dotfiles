@@ -1,5 +1,46 @@
 #/bin/bash
 
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   INSTALLING PACKAGES   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
+
+# Path to the file containing package names
+PACKAGE_FILE="./stems/packages.txt"
+
+# Check if the file exists
+if [[ ! -f "$PACKAGE_FILE" ]]; then
+    echo "Package list file not found!"
+    exit 1
+fi
+
+# Read the file and install packages using brew
+while read -r package; do
+    # Skip empty lines and comments
+    [[ -z "$package" || "$package" =~ ^# ]] && continue
+
+    echo "Installing $package..."
+    brew install "$package"
+done < "$PACKAGE_FILE"
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   PACKAGES INSTALLED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   RICING (WALLPAPERS, GITHUB AND CONFIGS)   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
 
 ## CREATING DIRECTORIES
 
@@ -26,8 +67,15 @@ ssh -T git@github.com
 
 cd ~/gitrepos/ && git clone "git@github.com:harshdeepsinghin/dotfiles.git"
 
-## RICING
+echo """
 
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   DONE SETUP-ING GIT (GITHUB)   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
+
+## RICING
 
 for i in $(curl -s "https://harshdeepsingh.sirv.com/Wallpapers/" | tr " " "\n" | grep "harshdeepsingh.sirv.com/Wallpapers/" | sed -e 's/\(^.*"\)\(.*\)\(".*$\)/\2/' |  cut -c 3-); do wget -nc -P ~/Pictures/wallpapers/ https://$i; done
 
@@ -38,7 +86,6 @@ echo """
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
-
 
 rm ~/.config/fish/config.fish 
 ln -s ~/gitrepos/dotfiles/macOS/config.fish ~/.config/fish/config.fish
