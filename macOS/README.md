@@ -58,7 +58,14 @@ bash <(curl -fsSL https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/re
 bash <(curl -fsSL https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/refs/heads/main/macOS/scripts/stems/git-setup.sh) ok
 ```
 
-### 3. Set Up Configurations
+### 3. My Fish Config
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/harshdeepsinghin/dotfiles/refs/heads/main/macOS/scripts/stems/get-my-fish-config.sh)
+```
+
+
+### 4. Set Up Configurations
 
 The main `setup.sh` script handles:
 - Creating necessary directories
