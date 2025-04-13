@@ -16,7 +16,6 @@ This repository contains my personalized macOS development environment setup, in
 
 ### Development Environment
 - Git configured with SSH signing
-- Java environment variables set up
 - Custom paths for development folders
 
 
@@ -100,15 +99,5 @@ To update your dotfiles:
 ## License
 
 This setup is free to use and modify. If you find it useful, consider starring the repository!
-```
 
-Key improvements in this version:
-1. Reflects your new directory structure
-2. Better organization of sections
-3. Clearer installation instructions
-4. More detailed feature descriptions
-5. Better visual hierarchy with markdown formatting
-6. Added placeholder for screenshot (you can add one later)
-7. Added license section (you can specify your preferred license)
-
-The README maintains all your existing functionality while presenting it in a more organized way that matches your current file structure.
+Dhanyavaad!
