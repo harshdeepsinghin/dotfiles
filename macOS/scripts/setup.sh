@@ -94,6 +94,17 @@ echo """
 
 """
 
+rm ~/.vim/vimrc
+ln -s ~/gitrepos/dotfiles/macOS/configs/vim/vimrc ~/.vim/vimrc
+
+echo """
+
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+!!!   VIM CONFIG UPDATED   !!!
++-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+"""
+
 rm ~/.config/zed/settings.json
 ln -s ~/gitrepos/dotfiles/macOS/configs/zed/settings.json ~/.config/zed/settings.json
 

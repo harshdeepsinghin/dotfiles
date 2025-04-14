@@ -3,7 +3,7 @@
 # CUSTOM PATHS
 
 ## configs
-set -gx fishconfig ~/gitrepos/dotfiles/macOS/config.fish
+set -gx fishconfig ~/gitrepos/dotfiles/macOS/configs/fish/config.fish
 set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 
 ## folders
