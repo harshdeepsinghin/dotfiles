@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnySoftKeyboardPrefs version="1">
+    <pref>
+        <value providerId="SharedPreferences"/>
+        <value version="1"/>
+        <pref>
+            <pref>
+                <value settings_key_swipe_right_action="next_alphabet"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_hide_soft_when_physical="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_use_user_dictionary="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_emoticon_default_text=""/>
+            </pref>
+            <pref>
+                <value settings_key_layout_for_internet_fields="c7535083-4fe6-49dc-81aa-c5438a1a343a"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_allow_layouts_to_provide_generic_rows="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_16bbcd88-5532-4fd6-92ff-db57977dd815="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_force_locale="System"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_use_custom_hint_align="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_one_shot_quick_text_popup="false"/>
+            </pref>
+            <pref>
+                <value settings_key_next_word_dictionary_type="words"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_82910c70-ded1-11e0-9572-0800200c9a66="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_enable_alt_space_language_shortcut="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_69520BA1-7EB1-424B-B5C5-C3C4857E53FE="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_546b29d0-2563-11e9-b56e-0800200c9a66="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_0700096a-c705-4998-9a40-ddb4876bab44="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_keyboard_icon_in_status_bar="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value quick_text_0077b34d-770f-4083-83e4-081957e06c27="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_use_backword="true"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_auto_pick_suggestion_aggressiveness="none"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_642e9690-ded5-11e0-9572-0800200c9a66="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_show_keyboard_name_text_key="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value key_press_preview_popup="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_allow_suggestions_restart="true"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_up_from_spacebar_action="utility_keyboard"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value quick_text_623e21f5-9200-4c0b-b4c7-9691129d7f1f="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_37334220-b0ca-11e8-8c82-0b99ca86e03e="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value double_space_to_period="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_theme_case_type_override="theme"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_default_emoji_gender="person"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value quick_fix="false"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value keyboard_34CC76A3-91B3-4204-BB1B-421BA8FC8430="false"/>
+            </pref>
+            <pref>
+                <value configurationVersion="12"/>
+                <value type="int"/>
+            </pref>
+            <pref>
+                <value settings_key_auto_dictionary_threshold="9"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value KEY_QUICK_TEXT_PREF_LAST_SELECTED_TAB_ADD_ON_ID="698b8c20-19df-11e1-bddb-0800200c9a66"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_cycle_all_symbols="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_workaround_disable_rtl_fix="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_left_two_fingers_action="next_symbols"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_persistent_layout_per_package_id="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_custom_hint_valign_key="48"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_always_use_fallback_user_dictionary="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_up_action="shift"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_use_volume_key_for_left_right="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value zoom_factor_keys_in_portrait="1"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_switch_keyboard_on_space="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_f926cc04-c8ba-4392-8000-e52b8abb7093="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_left_action="next_symbols"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_initial_quick_text_tab="last_used"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_next_word_suggestion_aggressiveness="medium_aggressiveness"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value keyboard_9a174a0b-fe10-4244-aceb-1ef73f698954="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value keyboard_4100d602-ba06-40e5-b169-61881b065def="false"/>
+            </pref>
+            <pref>
+                <value settings_key_use_system_vibration="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_colorize_nav_bar="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_key_press_preview_popup_position="above_key"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_E797771E-F8CF-4684-96CB-3546A54A7A10="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_gesture_typing="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_c7535083-4fe6-49dc-81aa-c5438a1a343a="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_down_action="hide"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value quick_text_9493bdf1-ae8e-4d5d-a1e3-065bfdf83b60="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_53baf0a3-389d-4257-815b-5820d7d219f7="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_use_contacts_dictionary="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_landscape_fullscreen="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_long_press_timeout="350"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value auto_caps="false"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_vibrate_on_long_press="true"/>
+            </pref>
+            <pref>
+                <value zoom_factor_keys_in_landscape=".80"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_pop_text_option="on_correction"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value quick_text_AddOnsFactory_order_key="698b8c20-19df-11e1-bddb-0800200c9a66,0077b34d-770f-4083-83e4-081957e06c27,085020ea-f496-4c0c-80cb-45ca50635c59,623e21f5-9200-4c0b-b4c7-9691129d7f1f,4a4501b4-0a1f-4fc3-9557-91538dd3f92a,9493bdf1-ae8e-4d5d-a1e3-065bfdf83b60,698b8c20-19df-11e1-bddb-0800200c9a67,913d2e9a-2c77-46f3-a966-5ce17a3150ef,1057806d-4f6e-42aa-8dfd-eea57995c2ee,032e0d3f-9281-4514-8c7c-c6cf3ff8b45b,a4dac174-81cf-41e6-a925-4ed3a32270c5,653e7203-5790-4042-9d5a-f2cb186ccaf9,a3e77c5f-133e-41d2-8449-6220daf9388b,df479326-1728-44e8-a797-8e40ff0e2a41,f8bfef54-db96-42e5-b3aa-d9e2ebd57a3a,5afdb441-dbbe-46cf-98b8-2a5059e3b5e5"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value HistoryQuickTextKey_encoded_history_key="😊,😊,☺️,☺️,🥳,🥳,☹️,☹️,😕,😕,🤨,🤨,🤔,🤔,🐣,🐣,😑,😑,😸,😸,🫠,🫠,🤐,🤐,🥶,🥶,🥰,🥰,😬,😬,😐,😐,😍,😍,😁,😁,😅,😅,😇,😇,🥲,🥲,😂,😂,😆,😆,🤣,🤣,🙃,🙃,🙂,🙂,😘,😘,🙏,🙏,🫶,🫶,😄,😄,"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value quick_text_5afdb441-dbbe-46cf-98b8-2a5059e3b5e5="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_show_chewbacca="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_separate_gesture_action="split_layout"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value ext_kbd_enabled_2_49c8c4b0-b3bc-11e8-933e-975e4dcf2c13="false"/>
+            </pref>
+            <pref>
+                <value settings_key_extension_keyboard_enabled="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value default_domain_text=".com"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_1fae0220-ded6-11e0-9572-0800200c9a66="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_bool_should_swap_punctuation_and_space="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value quick_text_f8bfef54-db96-42e5-b3aa-d9e2ebd57a3a="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_b1c24b40-02ce-4857-9fb8-fb9e4e3b4318="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value quick_text_698b8c20-19df-11e1-bddb-0800200c9a67="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value quick_text_698b8c20-19df-11e1-bddb-0800200c9a66="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_d9d6f590-db8b-11e7-8f1a-0800200c9a66="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_swipe_right_space_bar_action="next_alphabet"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_show_hint_text_key="true"/>
+            </pref>
+            <pref>
+                <value settings_key_vibrate_on_key_press_duration_int="0"/>
+                <value type="int"/>
+            </pref>
+            <pref>
+                <value keyboard_233838da-ed6c-4765-8fcc-b3e8f4090633="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_6187a431-f737-49b2-baa6-78cc49ec8214="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value ext_kbd_enabled_2_5d945f40-ded5-11e0-9572-0800200c9a66="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value use_keyrepeat="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_show_settings_app="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_pinch_gesture_action="merge_layout"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_custom_hint_align_key="17"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value quick_text_085020ea-f496-4c0c-80cb-45ca50635c59="true"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_hint_size="normal"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_default_split_state_portrait="merged_always"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value keyboard_12335055-4aa6-49dc-8456-c7d38a1a5123="false"/>
+            </pref>
+            <pref>
+                <value settings_key_is_sticky_extesion_keyboard="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value setup_wizard_STARTED_SETUP_PREF_KEY="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value candidates_on="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value insert_space_after_word_suggestion_selection="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value settings_key_do_not_flip_quick_key_codes_functionality="true"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_tweak_animations_level="some"/>
+            </pref>
+            <pref>
+                <value sound_on="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_left_space_bar_action="next_symbols"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_os_clipboard_sync="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_search_quick_text_tags="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value quick_text_913d2e9a-2c77-46f3-a966-5ce17a3150ef="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value keyboard_86770389-9f38-4654-9e29-68d503410fcd="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_default_emoji_skin_tone="generic"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_distance_threshold="140"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_portrait_fullscreen="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_velocity_threshold="380"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_last_app_version_installed="7137"/>
+                <value type="int"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value use_custom_sound_volume="false"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_multitap_timeout="700"/>
+            </pref>
+            <pref>
+                <value type="bool"/>
+                <value keyboard_5403a53a-6369-4dee-bf6e-32901634ae08="false"/>
+            </pref>
+            <pref>
+                <value type="string"/>
+                <value settings_key_default_split_state_landscape="merged_always"/>
+            </pref>
+            <pref>
+                <value settings_key_quick_fix_second_disabled="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value lang_key_shows_popup="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_always_hide_language_key="false"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_swipe_right_two_fingers_action="next_alphabet"/>
+                <value type="string"/>
+            </pref>
+            <pref>
+                <value settings_key_enable_shift_space_language_shortcut="true"/>
+                <value type="bool"/>
+            </pref>
+            <pref>
+                <value settings_key_first_app_version_installed="7137"/>
+                <value type="int"/>
+            </pref>
+        </pref>
+    </pref>
+    <pref>
+        <value providerId="UserDictionaryPrefsProvider"/>
+        <value version="1"/>
+        <pref>
+            <pref>
+                <value locale="en"/>
+                <pref>
+                    <value freq="128"/>
+                    <value word="jara"/>
+                </pref>
+                <pref>
+                    <value freq="128"/>
+                    <value word="bhi"/>
+                </pref>
+                <pref>
+                    <value freq="128"/>
+                    <value word="ki"/>
+                </pref>
+            </pref>
+        </pref>
+    </pref>
+    <pref>
+        <value providerId="NextWordPrefsProvider"/>
+        <value version="1"/>
+        <pref>
+            <pref>
+                <value locale="en"/>
+            </pref>
+        </pref>
+    </pref>
+    <pref>
+        <value providerId="WordsSQLiteConnectionPrefsProvider"/>
+        <value version="1"/>
+        <pref>
+            <pref>
+                <value locale="en"/>
+            </pref>
+        </pref>
+    </pref>
+</AnySoftKeyboardPrefs>
