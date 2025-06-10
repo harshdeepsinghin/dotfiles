@@ -282,3 +282,50 @@ function wavdl
            "ytsearch1:$query"
 end
 
+function newpaste --description 'Create a new file with clipboard contents'
+    # Parse arguments
+    set -l force false
+    set -l filename ""
+
+    for arg in $argv
+        switch $arg
+            case -f --force
+                set force true
+            case '-*'
+                echo "Error: Unknown option '$arg'"
+                return 1
+            case '*'
+                set filename $arg
+        end
+    end
+
+    # Check if filename was provided
+    if test -z "$filename"
+        echo "Usage: newpaste filename.txt [-f|--force]"
+        return 1
+    end
+
+    # Check if file exists (and not forcing)
+    if test -e "$filename" -a "$force" = false
+        echo "Error: File '$filename' already exists (use -f to overwrite)"
+        return 1
+    end
+
+    # Paste clipboard to file
+    switch (uname)
+        case Linux
+            if type -q xclip
+                xclip -o -selection clipboard > "$filename"
+                echo "Created '$filename' with clipboard contents"
+            else
+                echo "Error: xclip not installed (try: sudo apt install xclip)"
+                return 1
+            end
+        case Darwin
+            pbpaste > "$filename"
+            echo "Created '$filename' with clipboard contents"
+        case '*'
+            echo "Error: Unsupported operating system"
+            return 1
+    end
+end
