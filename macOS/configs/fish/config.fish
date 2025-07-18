@@ -269,18 +269,31 @@ set -gx JAVA_HOME (/usr/libexec/java_home -v 17)
 
 function wavdl
     if test (count $argv) -eq 0
-        echo "Usage: wavdl <song name>"
+        echo "Usage: wavdl <song name or YouTube link>"
         return 1
     end
 
     set -l query (string join " " $argv)
-    echo "🔍 Searching and downloading: $query"
 
-    yt-dlp --extract-audio \
-           --audio-format wav \
-           --output "%(title)s.%(ext)s" \
-           "ytsearch1:$query"
+    # Regex pattern to detect YouTube links.
+    set -l yt_regex '^https?://(www\.)?(youtube\.com|youtu\.be)/'
+
+    if string match -rq $yt_regex $argv[1]
+        echo "🔗 Direct link detected, downloading: $argv[1]"
+        yt-dlp --extract-audio \
+               --audio-format wav \
+               --output "%(title)s.%(ext)s" \
+               --no-playlist \
+               $argv[1]
+    else
+        echo "🔍 Searching and downloading: $query"
+        yt-dlp --extract-audio \
+               --audio-format wav \
+               --output "%(title)s.%(ext)s" \
+               "ytsearch1:$query"
+    end
 end
+
 
 function newpaste --description 'Create a new file with clipboard contents'
     # Parse arguments
@@ -329,3 +342,7 @@ function newpaste --description 'Create a new file with clipboard contents'
             return 1
     end
 end
+
+set -Ux ANDROID_HOME /opt/homebrew/share/android-commandlinetools
+set -Ux PATH $PATH $ANDROID_HOME/bin
+
