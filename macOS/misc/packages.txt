@@ -14,7 +14,6 @@ iterm2
 tutanota
 audacity
 neofetch
-rectangle
 latest
 fzf
 alt-tab
