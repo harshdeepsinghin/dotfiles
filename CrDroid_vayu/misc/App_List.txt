@@ -1,0 +1,6 @@
+https://f-droid.org/en/packages/org.fdroid.fdroid/
+https://f-droid.org/en/packages/org.schabi.newpipe/
+https://f-droid.org/en/packages/io.ente.auth/
+https://f-droid.org/en/packages/me.zhanghai.android.files/
+https://f-droid.org/en/packages/com.beemdevelopment.aegis/
+https://f-droid.org/en/packages/com.smartpack.packagemanager/

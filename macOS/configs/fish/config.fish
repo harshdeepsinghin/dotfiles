@@ -63,7 +63,7 @@ end
 
 function amazon
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    open -na "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
+    open -a "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
 end
 
 function bpsh
@@ -78,7 +78,7 @@ end
 
 function anonyt
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    open -na "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
+    open -a "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
 end
 
 
@@ -195,12 +195,12 @@ end
 #         if [ $S = 'EXIT']
 #             set A 1
 #         else
-#             brave --guest "https://www.google.com/search?q=How+to+"$(read)"+in+bash"
+#             open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+"$(read)"+in+bash"
 #         end
 #     end
 #   else
 #     set S $(printf '%s' "$argv" | tr ' ' '+')
-#     brave --guest "https://www.google.com/search?q=How+to+"$S"+in+bash"
+#     open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+"$S"+in+bash"
 #   end
 # end
 
@@ -213,21 +213,21 @@ function helpbash
               set A 1
           else
               set search_query "How+to+"(string escape "$S")"+in+bash"
-              brave --guest "https://www.google.com/search?q=$search_query"
+              open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=$search_query"
           end
       end
     else
       set -p S (printf '%s' "$argv" | tr ' ' '+')
       set search_query "How+to+"(string escape "$S")"+in+bash"
-      brave --guest "https://www.google.com/search?q=$search_query"
+      open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=$search_query"
     end
   end
   
   
 
 function helpfish
-  set S $(printf '%s' "$argv" | tr ' ' '+')
-  brave --guest "https://www.google.com/search?q=How+to+"$S"+in+bash"
+    set S (printf '%s' "$argv" | tr ' ' '+')
+    open -na "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+$S+in+bash"
 end
 
 function calc
@@ -346,3 +346,6 @@ end
 set -Ux ANDROID_HOME /opt/homebrew/share/android-commandlinetools
 set -Ux PATH $PATH $ANDROID_HOME/bin
 
+
+# uv
+fish_add_path "/Users/ektara/.local/bin"

@@ -105,18 +105,6 @@ echo """
 
 """
 
-rm ~/.config/zed/settings.json
-ln -s ~/gitrepos/dotfiles/macOS/configs/zed/settings.json ~/.config/zed/settings.json
-
-echo """
-
-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-!!!   ZED CONFIG UPDATED   !!!
-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-
-"""
-
-
 echo """
 
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+

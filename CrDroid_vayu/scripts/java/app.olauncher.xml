@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<map>
+    <string name="im.vector.app">Element - Matrix</string>
+    <string name="app_language">System</string>
+    <boolean name="FIRST_OPEN" value="false" />
+    <string name="com.android.dialer">Phone</string>
+    <boolean name="HIDDEN_APPS_UPDATED" value="true" />
+    <string name="APP_PACKAGE_1">com.foobnix.pro.pdf.reader</string>
+    <string name="APP_ALIAS_4" />
+    <string name="APP_PACKAGE_2">org.schabi.newpipe</string>
+    <string name="APP_ALIAS_3" />
+    <string name="APP_ALIAS_2" />
+    <string name="APP_ALIAS_SWIPE_RIGHT" />
+    <string name="APP_ALIAS_1" />
+    <string name="APP_PACKAGE_0">com.brave.browser</string>
+    <string name="APP_ALIAS_0" />
+    <string name="APP_PACKAGE_3">com.spotify.music</string>
+    <string name="APP_PACKAGE_4">com.razeeman.util.simpletimetracker</string>
+    <string name="APP_USER_SWIPE_RIGHT">UserHandle{0}</string>
+    <string name="com.snapchat.android">Snapchat SCT</string>
+    <string name="HIDDEN_APPS">["com.pubg.imobile|UserHandle{0}"]</string>
+    <string name="APP_USER_2">UserHandle{0}</string>
+    <string name="APP_ACTIVITY_3">com.spotify.music.MainActivity</string>
+    <string name="APP_ACTIVITY_2">org.schabi.newpipe.MainActivity</string>
+    <string name="APP_USER_3">UserHandle{0}</string>
+    <string name="APP_USER_4">UserHandle{0}</string>
+    <string name="APP_ACTIVITY_4">com.example.util.simpletimetracker.ui.MainActivity</string>
+    <string name="APP_USER_0">UserHandle{0}</string>
+    <string name="APP_USER_1">UserHandle{0}</string>
+    <boolean name="HOME_LOCKED" value="false" />
+    <string name="SWIPE_RIGHT_ACTION">OpenApp</string>
+    <string name="APP_PACKAGE_SWIPE_RIGHT">com.simplemobiletools.dialer</string>
+    <string name="APP_NAME_SWIPE_RIGHT">Dialer</string>
+    <string name="TIME_ALIGNMENT">Center</string>
+    <boolean name="HOME_CLICK_AREA" value="false" />
+    <string name="org.omnirom.logcat">Log</string>
+    <string name="DRAWER_ALIGNMENT">Center</string>
+    <boolean name="SHOW_DATE" value="true" />
+    <boolean name="HOME_ALIGNMENT_BOTTOM" value="false" />
+    <string name="APP_NAME_0">&#128270;search</string>
+    <string name="APP_NAME_1">&#128214;read</string>
+    <string name="APP_NAME_2">&#127909;watch</string>
+    <string name="APP_NAME_3">&#127911;listen</string>
+    <string name="APP_ACTIVITY_1">com.foobnix.ui2.MainTabs2</string>
+    <string name="APP_NAME_4">⏳track</string>
+    <string name="APP_ACTIVITY_0">com.google.android.apps.chrome.Main</string>
+    <boolean name="FIRST_SETTINGS_OPEN" value="false" />
+    <boolean name="STATUS_BAR" value="true" />
+    <string name="APP_THEME">Light</string>
+    <string name="APP_ACTIVITY_SWIPE_RIGHT">com.simplemobiletools.dialer.activities.SplashActivity.Orange</string>
+    <int name="text_size" value="24" />
+    <string name="HOME_ALIGNMENT">Center</string>
+    <int name="HOME_APPS_NUM" value="5" />
+</map>

@@ -1,0 +1,6 @@
+https://f-droid.org/repo/org.fdroid.fdroid_1023000.apk
+https://f-droid.org/repo/org.schabi.newpipe_1003.apk
+https://f-droid.org/repo/io.ente.auth_436.apk
+https://f-droid.org/repo/me.zhanghai.android.files_39.apk
+https://f-droid.org/repo/com.beemdevelopment.aegis_77.apk
+https://f-droid.org/repo/com.smartpack.packagemanager_72.apk
