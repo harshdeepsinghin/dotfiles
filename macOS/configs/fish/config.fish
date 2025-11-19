@@ -190,11 +190,6 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 
 end
 
-function helpfish
-    set S (printf '%s' "$argv" | tr ' ' '+')
-    open -na "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+$S+in+bash"
-end
-
 function calc
     set Q true
     while [ $Q = 'true' ]
