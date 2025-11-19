@@ -84,7 +84,7 @@ end
 
 function ytm
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S+lyrical+audio" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://inv.nadeko.net/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '2p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
@@ -102,18 +102,21 @@ end
 
 function ytmusic
     set Q true
+    set -g fish_read_prompt "search: "
+
     while [ $Q = 'true' ]
         set K $(read)
-        if [ $K = "exit" ]
+        if contains -- "$K" exit quit q
             set Q false
         else
             ytm "$K"
         end
     end
 end
+
 function ytmax
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://inv.nadeko.net/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '2p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
@@ -131,7 +134,7 @@ end
 
 function ytuhd
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://inv.nadeko.net/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '2p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
@@ -150,7 +153,7 @@ end
 
 function ytfhd
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://inv.nadeko.net/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '2p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
@@ -170,7 +173,7 @@ end
 
 function ythd
     set S $(printf '%s' "$argv" | sed -e 's/ /+/g')
-    set LINK "https://www.youtube.com$(curl -s "https://vid.puffyan.us/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '1p')"
+    set LINK "https://www.youtube.com$(curl -s "https://inv.nadeko.net/search?q=$S" | grep -s -Eo "/watch\?v=.{11}" | sed -n '2p')"
     set TITLE $(wget -qO- "$LINK" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)(?: - youtube)?\s*<\/title/si')
     echo "
 
