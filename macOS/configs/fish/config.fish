@@ -202,13 +202,6 @@ function calc
     end
 end
 
-
-function chalo
-  set S $(printf '%s' "$argv")
-  gcc $S.c -o $S_exe
-  ./$S_exe
-end
-
 function whatis
   set S $(printf '%s' "$argv")
   open "https://google.com/search?q=$S"
