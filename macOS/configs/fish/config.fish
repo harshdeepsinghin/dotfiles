@@ -129,7 +129,7 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-    mpv "$LINK"
+    mpv --fs "$LINK"
 end
 
 function ytuhd
@@ -147,7 +147,7 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-    mpv --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio" "$LINK"
+    mpv --fs --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio" "$LINK"
 
 end
 
@@ -166,7 +166,7 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-    mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio" "$LINK"
+    mpv --fs --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio" "$LINK"
 
 end
 
@@ -186,11 +186,9 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 ---X---X---X---X---X---X---X---X---
 
 "
-    mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio" "$LINK"
+    mpv --fs --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio" "$LINK"
 
 end
-
-  
 
 function helpfish
     set S (printf '%s' "$argv" | tr ' ' '+')
