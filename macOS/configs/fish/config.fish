@@ -66,16 +66,6 @@ function amazon
     open -na "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
 end
 
-function bpsh
-    set S $(printf '%s' "$argv")
-    echo "#!/bin/bash" >$S && vim $S
-end
-
-function bppy
-    set S $(printf '%s' "$argv")
-    echo "#!/bin/python" >$S && vim $S
-end
-
 function anonyt
     set S $(printf '%s' "$argv" | tr ' ' '+')
     open -na "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
