@@ -187,42 +187,6 @@ $(tput setab 1)$(tput setaf 7) ▶ $(tput sgr 0) $(tput setaf 1)$(tput setab 7) 
 
 end
 
-# function helpbash
-#   if $arg[1] = "loop"
-#     set A 0
-#     while [ $A = 0 ]
-#         set S $(read -P 'How to (in bash): ')
-#         if [ $S = 'EXIT']
-#             set A 1
-#         else
-#             open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+"$(read)"+in+bash"
-#         end
-#     end
-#   else
-#     set S $(printf '%s' "$argv" | tr ' ' '+')
-#     open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=How+to+"$S"+in+bash"
-#   end
-# end
-
-function helpbash
-    if test "$argv[1]" = "loop"
-      set A 0
-      while test $A = 0
-          set -p S (read -p 'How to (in bash): ')
-          if test "$S" = 'EXIT'
-              set A 1
-          else
-              set search_query "How+to+"(string escape "$S")"+in+bash"
-              open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=$search_query"
-          end
-      end
-    else
-      set -p S (printf '%s' "$argv" | tr ' ' '+')
-      set search_query "How+to+"(string escape "$S")"+in+bash"
-      open -a "Brave Browser" --args --incognito "https://www.google.com/search?q=$search_query"
-    end
-  end
-  
   
 
 function helpfish
