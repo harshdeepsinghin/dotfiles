@@ -63,7 +63,7 @@ end
 
 function amazon
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    open -a "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
+    open -na "Brave Browser" --args --incognito "https://www.amazon.in/s?k="$S""
 end
 
 function bpsh
@@ -78,7 +78,7 @@ end
 
 function anonyt
     set S $(printf '%s' "$argv" | tr ' ' '+')
-    open -a "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
+    open -na "Brave Browser" --args --incognito "https://www.youtube.com/results?search_query=$S"
 end
 
 
