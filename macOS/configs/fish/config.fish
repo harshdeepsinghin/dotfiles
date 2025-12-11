@@ -292,3 +292,6 @@ set -Ux PATH $PATH $ANDROID_HOME/bin
 
 # uv
 fish_add_path "/Users/ektara/.local/bin"
+
+# Added by Antigravity
+fish_add_path /Users/ektara/.antigravity/antigravity/bin
