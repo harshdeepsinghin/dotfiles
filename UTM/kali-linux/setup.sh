@@ -8,6 +8,7 @@ echo "deb [signed-by=/etc/apt/keyrings/kali-archive-keyring.gpg] http://http.kal
 
 sudo apt update
 sudo apt full-upgrade -y
+sudo apt install spice-vdagent -y
 
 sudo apt autoremove -y
 sudo apt autoclean
