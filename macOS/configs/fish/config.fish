@@ -1,10 +1,10 @@
-﻿neofetch
-
-# CUSTOM PATHS
+﻿# CUSTOM PATHS
 
 ## configs
 set -gx fishconfig ~/gitrepos/dotfiles/macOS/configs/fish/config.fish
 set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
+set -gx asconfig ~/.config/aerospace/aerospace.toml
+set -gx ghosttyconfig ~/.config/ghostty/config
 
 ## folders
 set -gx macrepo ~/gitrepos/dotfiles/macOS
