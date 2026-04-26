@@ -9,7 +9,7 @@ visual-studio-code
 yt-dlp
 p7zip
 alfred
-iterm2
+ghostty
 audacity
 fastfetch
 latest
