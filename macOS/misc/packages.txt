@@ -11,7 +11,7 @@ p7zip
 alfred
 iterm2
 audacity
-neofetch
+fastfetch
 latest
 fzf
 coreutils
