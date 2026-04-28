@@ -82,17 +82,10 @@ echo """
 """
 
 rm -rf ~/.config/fish/ 
-ln -s /Users/ektara/gitrepos/dotfiles/macOS/configs/fish ~/.config/
+ln -s ~/gitrepos/dotfiles/macOS/configs/fish ~/.config/
 fish -c "fish_add_path opt/homebrew/bin/"
 fish -c "fish_update_completions"
 
-echo """
-
-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-!!!   FISH CONFIG UPDATED   !!!
-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-
-"""
 rm ~/.vim/vimrc
 ln -s ~/gitrepos/dotfiles/macOS/configs/vim/vimrc ~/.vim/vimrc
 
@@ -103,12 +96,15 @@ rm -rf ~/.config/fastfetch
 ln -s ~/gitrepos/dotfiles/macOS/configs/fastfetch/ ~/.config/
 
 rm -rf ~/.config/aerospace
-ln -s /Users/ektara/gitrepos/dotfiles/macOS/configs/aerospace ~/.config/
+ln -s ~/gitrepos/dotfiles/macOS/configs/aerospace ~/.config/
+
+rm -rf ~/.config/syncplay.ini
+ln -s ~/gitrepos/dotfiles/macOS/configs/syncplay.ini ~/.config/syncplay.ini
 
 echo """
 
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-!!!   VIM CONFIG UPDATED   !!!
+!!!   CONFIGS UPDATED   !!!
 +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 
 """
