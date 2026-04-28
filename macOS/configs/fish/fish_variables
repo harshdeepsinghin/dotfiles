@@ -3,10 +3,12 @@
 SETUVAR --export ANDROID_HOME:/opt/homebrew/share/android\x2dcommandlinetools
 SETUVAR --export CHROME_EXECUTABLE:/Applications/Brave\x20Browser\x2eapp/Contents/MacOS/Brave\x20Browser
 SETUVAR --export CPPFLAGS:\x2dI/opt/homebrew/opt/openssl\x403/include
+SETUVAR --export EDITOR:nvim
 SETUVAR --export JAVA_HOME:/opt/homebrew/Cellar/openjdk/25\x2e0\x2e2/libexec/openjdk\x2ejdk/Contents/Home
 SETUVAR --export LDFLAGS:\x2dL/opt/homebrew/opt/openssl\x403/lib
 SETUVAR --export --path PATH:/Users/ektara/\x2edotnet\x1e/Users/ektara/\x2eantigravity/antigravity/bin\x1e/opt/homebrew/opt/python\x403\x2e14/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew/sbin\x1e/Users/ektara/\x2elocal/bin\x1e/Users/ektara/development/flutter/bin\x1e/Users/ektara/development/flutter\x1e/opt/homebrew/opt/openjdk/bin\x1e/Users/ektara/Library/Python/3\x2e9/bin\x1e/usr/bin\x1e/Users/ektara/\x2edotnet/tools\x1e/usr/local/bin\x1e/System/Cryptexes/App/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/local/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/appleinternal/bin\x1e/opt/pkg/env/active/bin\x1e/opt/pmk/env/global/bin\x1e/opt/X11/bin\x1e/Library/Apple/usr/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS\x1e/opt/homebrew/share/android\x2dcommandlinetools/bin
 SETUVAR --export --path PKG_CONFIG_PATH:/opt/homebrew/opt/openssl\x403/lib/pkgconfig
+SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:
 SETUVAR fish_user_paths:/Users/ektara/\x2edotnet\x1e/Users/ektara/\x2eantigravity/antigravity/bin\x1e/opt/homebrew/opt/python\x403\x2e14/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew/sbin\x1e/Users/ektara/\x2elocal/bin\x1e/Users/ektara/development/flutter/bin\x1e/Users/ektara/development/flutter\x1e/opt/homebrew/opt/openjdk/bin\x1e/Users/ektara/Library/Python/3\x2e9/bin\x1e/usr/bin\x1e/Users/ektara/\x2edotnet/tools

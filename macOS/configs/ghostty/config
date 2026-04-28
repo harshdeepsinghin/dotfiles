@@ -1,0 +1,22 @@
+# font
+font-family = "JetBrainsMono Nerd Font"
+font-size = 20
+
+# background
+background-blur-radius = 20
+background-opacity = 0.85
+
+# window
+
+window-decoration = true
+macos-titlebar-style = hidden
+window-padding-x = 7
+window-padding-y = 7
+
+# misc
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+
+# keybinds
+
+keybind = alt+n=new_window
