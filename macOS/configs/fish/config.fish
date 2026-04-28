@@ -1,4 +1,5 @@
-﻿# CUSTOM PATHS
+﻿fastfetch
+# CUSTOM PATHS
 
 ## configs
 set -gx fishconfig ~/gitrepos/dotfiles/macOS/configs/fish/config.fish
