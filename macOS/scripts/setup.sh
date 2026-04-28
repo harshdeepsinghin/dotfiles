@@ -81,7 +81,7 @@ echo """
 
 """
 
-rm -f ~/.config/fish/ 
+rm -rf ~/.config/fish/ 
 ln -s /Users/ektara/gitrepos/dotfiles/macOS/configs/fish ~/.config/
 fish -c "fish_add_path opt/homebrew/bin/"
 fish -c "fish_update_completions"
@@ -96,13 +96,13 @@ echo """
 rm ~/.vim/vimrc
 ln -s ~/gitrepos/dotfiles/macOS/configs/vim/vimrc ~/.vim/vimrc
 
-rm -f ~/.config/nvim
+rm -rf ~/.config/nvim
 ln -s ~/gitrepos/dotfiles/macOS/configs/nvim ~/.config/
 
-rm -f ~/.config/fastfetch
+rm -rf ~/.config/fastfetch
 ln -s ~/gitrepos/dotfiles/macOS/configs/fastfetch/ ~/.config/
 
-rm -f ~/.config/aerospace
+rm -rf ~/.config/aerospace
 ln -s /Users/ektara/gitrepos/dotfiles/macOS/configs/aerospace ~/.config/
 
 echo """
