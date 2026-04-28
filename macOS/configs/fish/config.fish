@@ -289,7 +289,8 @@ end
 
 set -Ux ANDROID_HOME /opt/homebrew/share/android-commandlinetools
 set -Ux PATH $PATH $ANDROID_HOME/bin
-
+set -Ux VISUAL nvim
+set -Ux EDITOR nvim
 
 # uv
 fish_add_path "/Users/ektara/.local/bin"
