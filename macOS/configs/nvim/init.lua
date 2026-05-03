@@ -26,6 +26,37 @@ vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { silent = true })
 -- Clear Search Highlight
 vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", { silent = true })
 
+-- Toggle Side Explorer
+vim.keymap.set("n", "<leader>e", "<cmd>Lexplore<CR>", { silent = true })
+
+-- Resize Side Exporer
+vim.keymap.set("n", "<leader>r", function()
+  local function left_resize(cmd)
+    local cur = vim.api.nvim_get_current_win()
+    vim.cmd("wincmd h")      -- go to left window
+    vim.cmd(cmd)            -- resize left window
+    vim.api.nvim_set_current_win(cur) -- return
+  end
+
+  vim.keymap.set("n", "h", function()
+    left_resize("vertical resize -3")
+  end, { silent = true })
+
+  vim.keymap.set("n", "l", function()
+    left_resize("vertical resize +3")
+  end, { silent = true })
+
+  vim.keymap.set("n", "q", function()
+    vim.keymap.del("n", "h")
+    vim.keymap.del("n", "l")
+    vim.keymap.del("n", "q")
+    print("Resize mode off")
+  end, { silent = true })
+
+  print("Resize mode: h sidebar smaller | l sidebar bigger | q exit")
+end)
+
+
 -- =====================================
 -- MOVEMENT CUSTOMIZATION
 -- j = up
@@ -72,3 +103,15 @@ vim.opt.splitright = true       -- vertical split opens right
 vim.opt.splitbelow = true       -- horizontal split opens below
 vim.opt.updatetime = 250        -- faster updates
 vim.opt.timeoutlen = 400        -- faster mapped sequence response
+
+-- EXPORER SETTINGS
+
+-- Numbering
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    vim.opt_local.number = true
+    vim.opt_local.relativenumber = true
+    vim.opt_local.cursorline = true
+  end,
+})

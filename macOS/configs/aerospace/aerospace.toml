@@ -3,7 +3,7 @@ config-version = 2
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 after-startup-command = [
-    'exec-and-forget borders active_color=0xeeffffff width=6.0'
+    'exec-and-forget borders active_color=0xeeffffff width=6.5'
 ]
 
 start-at-login = true
@@ -34,6 +34,14 @@ on-mode-changed = []
     outer.bottom =     7
     outer.top =        7
     outer.right =      7
+
+[[on-window-detected]]
+if.app-name-regex-substring = "mpv|MPV"
+run = ["layout floating"]
+
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = ["layout floating"]
 
 [mode.main.binding]
 

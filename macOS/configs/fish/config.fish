@@ -6,8 +6,9 @@ set -gx fishconfig ~/gitrepos/dotfiles/macOS/configs/fish/config.fish
 set -gx vimconfig ~/gitrepos/dotfiles/macOS/vimrc
 set -gx asconfig ~/.config/aerospace/aerospace.toml
 set -gx ghosttyconfig ~/.config/ghostty/config
+set -gx nvimconfig ~/.config/nvim/init.lua
 
-## folders
+# folders
 set -gx macrepo ~/gitrepos/dotfiles/macOS
 
 # CUSTOM ALIASES
@@ -297,3 +298,14 @@ fish_add_path "/Users/ektara/.local/bin"
 
 # Added by Antigravity
 fish_add_path /Users/ektara/.antigravity/antigravity/bin
+
+function cpcode
+    set dir /Users/ektara/Documents/competitive-programming
+
+    mkdir -p $dir
+    cd $dir || return
+
+    touch main.cpp input.txt output.txt
+
+    nvim +"edit main.cpp | vertical resize 95 | vsplit input.txt | vertical resize 35 | wincmd l | vsplit output.txt | vertical resize 35 | wincmd h | wincmd h | botright split | resize 12 | terminal"
+end
