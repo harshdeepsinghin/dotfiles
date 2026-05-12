@@ -43,6 +43,34 @@ run = ["layout floating"]
 if.app-id = "com.apple.finder"
 run = ["layout floating"]
 
+[[on-window-detected]]
+if.app-id = "com.alienator88.Pearcleaner"
+run = ["layout floating"]
+
+# Telegram
+[[on-window-detected]]
+if.app-id = "ru.keepcoder.Telegram"
+run = [
+  "layout floating",
+  "resize width 420"
+]
+
+# Ente-Auth
+[[on-window-detected]]
+if.app-id = "io.ente.auth.mac"
+run = [
+  "layout floating",
+  "resize width 420"
+]
+
+# WhatsApp
+[[on-window-detected]]
+if.app-id = "net.whatsapp.WhatsApp"
+run = [
+  "layout floating",
+  "resize width 420"
+]
+
 [mode.main.binding]
 
     # All possible keys:
@@ -62,10 +90,49 @@ run = ["layout floating"]
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 
+alt-b = '''
+exec-and-forget osascript <<'APPLESCRIPT'
+tell application "Safari"
+    activate
+
+    repeat with w in windows
+        try
+            if name of w starts with "Surfer" then
+                set index of w to 1
+                return
+            end if
+        end try
+    end repeat
+end tell
+
+tell application "System Events"
+    keystroke "0" using {command down, option down, shift down}
+end tell
+APPLESCRIPT
+'''
+
+alt-s = '''
+exec-and-forget osascript <<'APPLESCRIPT'
+tell application "Safari"
+    activate
+
+    repeat with w in windows
+        try
+            if name of w starts with "Scholar" then
+                set index of w to 1
+                return
+            end if
+        end try
+    end repeat
+end tell
+
+tell application "System Events"
+    keystroke "1" using {command down, option down, shift down}
+end tell
+APPLESCRIPT
+'''
     alt-enter = 'exec-and-forget open -na Ghostty'
-    alt-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Default"'
-    alt-shift-b = 'exec-and-forget sleep 0.5 && open -a Firefox' 
-    alt-s = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 1"'
+    alt-shift-b = 'exec-and-forget sleep 0.1 && open -a Firefox' 
     alt-f = 'fullscreen --no-outer-gaps'
     alt-shift-r = 'reload-config'
 

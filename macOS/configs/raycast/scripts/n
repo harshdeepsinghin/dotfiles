@@ -1,0 +1,67 @@
+#!/bin/bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Quick Note
+# @raycast.mode silent
+
+# Optional parameters:
+# @raycast.icon 📝
+# @raycast.argument1 { "type": "text", "placeholder": "Write note..." }
+
+FILE="$HOME/notes/inbox.log"
+
+mkdir -p "$(dirname "$FILE")"
+
+timestamp=$(date '+%F %R')
+
+app=$(osascript -e '
+tell application "System Events"
+    get name of first application process whose frontmost is true
+end tell
+')
+
+context="$app"
+
+case "$app" in
+
+    "Safari")
+        tab=$(osascript -e '
+        tell application "Safari"
+            try
+                return name of current tab of front window
+            end try
+        end tell')
+
+        context="Safari ($tab)"
+        ;;
+
+    "Brave Browser")
+        tab=$(osascript -e '
+        tell application "Brave Browser"
+            try
+                return title of active tab of front window
+            end try
+        end tell')
+
+        context="Brave ($tab)"
+        ;;
+
+    "Firefox")
+        tab=$(osascript -e '
+        tell application "Firefox"
+            try
+                return name of front window
+            end try
+        end tell')
+
+        context="Firefox ($tab)"
+        ;;
+esac
+
+echo "$timestamp | $context | $*" >> "$FILE"
+
+# lightweight async notification
+(
+osascript -e 'display notification "Saved" with title "Quick Note"'
+) >/dev/null 2>&1 &
