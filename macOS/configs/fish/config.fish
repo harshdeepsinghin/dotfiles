@@ -13,7 +13,7 @@ set -gx macrepo ~/gitrepos/dotfiles/macOS
 
 # CUSTOM ALIASES
 
-alias notes "cat ~/notes/inbox.log"
+alias notes "cat ~/notes/inbox.log | sort -r"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
 alias wget='wget -c '
