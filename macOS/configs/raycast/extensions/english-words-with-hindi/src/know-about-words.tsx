@@ -77,6 +77,14 @@ function getPartOfSpeech(markdown: string): string {
   return match ? capitalize(match[1].toLowerCase()) : "";
 }
 
+function getPromptForWord(word: string): string {
+  return PROMPT.replace("{word}", word);
+}
+
+class RateLimitError extends Error {
+  status = 429;
+}
+
 export default function Command() {
   const preferences = getPreferenceValues<Preferences>();
   const wordsDir = useMemo(
@@ -90,6 +98,18 @@ export default function Command() {
   const [searchText, setSearchText] = useState("");
   const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
   const programmaticSelectionRef = useRef<string | null>(null);
+  const [lookupError, setLookupError] = useState<{
+    word: string;
+    type: "rate-limit" | "network" | "other";
+    message: string;
+  } | null>(null);
+
+  // Clear lookup error when search text changes to something different
+  useEffect(() => {
+    if (lookupError && lookupError.word !== searchText.trim()) {
+      setLookupError(null);
+    }
+  }, [searchText, lookupError]);
 
   // Cleanup programmatic selection ref after the list layout updates
   useEffect(() => {
@@ -176,6 +196,7 @@ export default function Command() {
     });
 
     setIsSearching(true);
+    setLookupError(null);
     try {
       const apiKey = preferences.geminiApiKey;
       if (!apiKey) {
@@ -185,7 +206,7 @@ export default function Command() {
       }
 
       const model = preferences.geminiModel || "gemini-3.5-flash";
-      const promptText = PROMPT.replace("{word}", wordToLookup);
+      const promptText = getPromptForWord(wordToLookup);
 
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -210,6 +231,9 @@ export default function Command() {
 
       if (!response.ok) {
         const errorText = await response.text();
+        if (response.status === 429) {
+          throw new RateLimitError("Rate limit reached");
+        }
         throw new Error(
           `Gemini API Request failed: ${response.status} ${response.statusText}\n${errorText}`,
         );
@@ -254,11 +278,51 @@ export default function Command() {
       toast.style = Toast.Style.Success;
       toast.title = "Word Saved";
       toast.message = `${capitalize(normalizedWord)} added to database`;
-    } catch (err) {
+    } catch (err: unknown) {
       console.error(err);
-      toast.style = Toast.Style.Failure;
-      toast.title = "Lookup Failed";
-      toast.message = err instanceof Error ? err.message : String(err);
+
+      const errMsg = err instanceof Error ? err.message : String(err);
+      const isNetworkError =
+        errMsg.includes("ENOTFOUND") ||
+        errMsg.includes("fetch failed") ||
+        errMsg.includes("network") ||
+        (err instanceof Error && err.name === "TypeError"); // standard fetch failure online/offline is a TypeError
+
+      if (isNetworkError) {
+        setLookupError({
+          word: wordToLookup,
+          type: "network",
+          message:
+            "Internet is not connected. Please check your network connection and try again.",
+        });
+        toast.style = Toast.Style.Failure;
+        toast.title = "No Internet Connection";
+        toast.message =
+          "Internet is not connected. Please check your network and try again.";
+      } else if (
+        err instanceof RateLimitError ||
+        errMsg.includes("429") ||
+        errMsg.toLowerCase().includes("rate limit")
+      ) {
+        setLookupError({
+          word: wordToLookup,
+          type: "rate-limit",
+          message:
+            "Rate limit reached. This rate limit will take some time, please try again later.",
+        });
+        toast.style = Toast.Style.Failure;
+        toast.title = "Rate Limit Reached";
+        toast.message = "Rate limit reached. Try again later.";
+      } else {
+        setLookupError({
+          word: wordToLookup,
+          type: "other",
+          message: errMsg,
+        });
+        toast.style = Toast.Style.Failure;
+        toast.title = "Lookup Failed";
+        toast.message = errMsg;
+      }
     } finally {
       setIsSearching(false);
     }
@@ -337,25 +401,90 @@ export default function Command() {
     >
       {showLookupItem && (
         <List.Section title="AI Lookup">
-          <List.Item
-            id="lookup-item"
-            title={`Search Gemini for "${cleanSearchText}"`}
-            icon={Icon.Globe}
-            actions={
-              <ActionPanel>
-                <Action
-                  title="Lookup Word"
-                  icon={Icon.MagnifyingGlass}
-                  onAction={() => handleLookup(cleanSearchText)}
+          {lookupError &&
+          lookupError.word.toLowerCase() === cleanSearchText.toLowerCase() ? (
+            <List.Item
+              id="lookup-item-error"
+              title={`Lookup Failed for "${cleanSearchText}"`}
+              subtitle={
+                lookupError.type === "rate-limit"
+                  ? "Rate Limit Reached"
+                  : lookupError.type === "network"
+                    ? "No Internet"
+                    : "Error"
+              }
+              icon={{ source: Icon.ExclamationMark, color: Color.Red }}
+              actions={
+                <ActionPanel>
+                  <Action
+                    title="Retry Lookup"
+                    icon={Icon.Repeat}
+                    onAction={() => handleLookup(cleanSearchText)}
+                  />
+                  {lookupError.type === "rate-limit" && (
+                    <>
+                      <Action.OpenInBrowser
+                        title="Search on Google"
+                        icon={Icon.Globe}
+                        url={`https://www.google.com/search?q=${encodeURIComponent(cleanSearchText + " meaning")}`}
+                      />
+                      <Action.OpenInBrowser
+                        title="Open ChatGPT"
+                        icon={Icon.Message}
+                        url={`https://chatgpt.com/?q=${encodeURIComponent(getPromptForWord(cleanSearchText))}`}
+                      />
+                      <Action
+                        title="Copy Prompt"
+                        icon={Icon.CopyClipboard}
+                        onAction={async () => {
+                          await Clipboard.copy(
+                            getPromptForWord(cleanSearchText),
+                          );
+                          await showToast({
+                            style: Toast.Style.Success,
+                            title: "Prompt Copied",
+                            message:
+                              "Designated ChatGPT prompt copied to clipboard",
+                          });
+                        }}
+                      />
+                    </>
+                  )}
+                </ActionPanel>
+              }
+              detail={
+                <List.Item.Detail
+                  markdown={`# Lookup Failed for "${cleanSearchText}"\n\n${
+                    lookupError.type === "rate-limit"
+                      ? `⚠️ **Rate limit reached.** This rate limit will take some time, please try again later.\n\n### Alternatives:\n1. **Google Search**: Search for this word directly on Google.\n2. **Open ChatGPT**: Open ChatGPT with the designated prompt already embedded.\n3. **Copy Prompt**: Copy the prompt to clipboard to manually paste it in any AI.`
+                      : lookupError.type === "network"
+                        ? `📡 **Internet is not connected.** Please check your network connection and try again.`
+                        : `❌ **Error**: ${lookupError.message}`
+                  }`}
                 />
-              </ActionPanel>
-            }
-            detail={
-              <List.Item.Detail
-                markdown={`# Search Gemini for "${cleanSearchText}"\n\nPress **Enter** to look up this word. It will generate a structured entry with definition, Hindi translation/pronunciation, examples, synonyms/antonyms, and word origin, then save it to your local directory.`}
-              />
-            }
-          />
+              }
+            />
+          ) : (
+            <List.Item
+              id="lookup-item"
+              title={`Search Gemini for "${cleanSearchText}"`}
+              icon={Icon.Globe}
+              actions={
+                <ActionPanel>
+                  <Action
+                    title="Lookup Word"
+                    icon={Icon.MagnifyingGlass}
+                    onAction={() => handleLookup(cleanSearchText)}
+                  />
+                </ActionPanel>
+              }
+              detail={
+                <List.Item.Detail
+                  markdown={`# Search Gemini for "${cleanSearchText}"\n\nPress **Enter** to look up this word. It will generate a structured entry with definition, Hindi translation/pronunciation, examples, synonyms/antonyms, and word origin, then save it to your local directory.`}
+                />
+              }
+            />
+          )}
         </List.Section>
       )}
 
