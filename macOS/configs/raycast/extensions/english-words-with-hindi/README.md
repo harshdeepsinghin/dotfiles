@@ -32,6 +32,7 @@ To use this extension locally in Raycast:
 Once installed, configure the extension in Raycast with the following preferences:
 
 - **Gemini API Key** (*Required*): Get your API key from [Google AI Studio](https://aistudio.google.com/).
+- **Gemini Model** (*Required*): Select your desired Google Gemini model (e.g. `gemini-3.5-flash`, `gemini-2.5-flash`, `gemini-2.0-flash`, `gemini-2.0-pro`, `gemini-1.5-flash`, `gemini-1.5-pro`). Defaults to `gemini-3.5-flash`.
 - **Words Storage Directory** (*Optional*): Path to the folder where your vocabulary markdown files will be saved. Defaults to `~/words`.
 
 ## Development Commands

@@ -21,6 +21,7 @@ import path from "path";
 interface Preferences {
   geminiApiKey: string;
   wordsDirectory: string;
+  geminiModel: string;
 }
 
 function getWordsDir(wordsDirectoryPref: string): string {
@@ -183,10 +184,11 @@ export default function Command() {
         );
       }
 
+      const model = preferences.geminiModel || "gemini-3.5-flash";
       const promptText = PROMPT.replace("{word}", wordToLookup);
 
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
         {
           method: "POST",
           headers: {

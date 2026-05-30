@@ -6,8 +6,7 @@
   "icon": "extension-icon.png",
   "author": "harshdeepsinghin",
   "platforms": [
-    "macOS",
-    "Windows"
+    "macOS"
   ],
   "categories": [
     "Productivity"
@@ -30,6 +29,40 @@
       "description": "Enter your Gemini API key (e.g. from Google AI Studio)",
       "placeholder": "AIzaSyC7Ujqzex_yEIqewX5bRGSPOXCD5DDa0JY",
       "required": true
+    },
+    {
+      "name": "geminiModel",
+      "type": "dropdown",
+      "title": "Gemini Model",
+      "description": "Select the Gemini model to use for definitions",
+      "default": "gemini-3.5-flash",
+      "required": true,
+      "data": [
+        {
+          "title": "Gemini 3.5 Flash",
+          "value": "gemini-3.5-flash"
+        },
+        {
+          "title": "Gemini 2.5 Flash",
+          "value": "gemini-2.5-flash"
+        },
+        {
+          "title": "Gemini 2.0 Flash (Recommended)",
+          "value": "gemini-2.0-flash"
+        },
+        {
+          "title": "Gemini 2.0 Pro",
+          "value": "gemini-2.0-pro"
+        },
+        {
+          "title": "Gemini 1.5 Flash",
+          "value": "gemini-1.5-flash"
+        },
+        {
+          "title": "Gemini 1.5 Pro",
+          "value": "gemini-1.5-pro"
+        }
+      ]
     },
     {
       "name": "wordsDirectory",

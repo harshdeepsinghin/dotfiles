@@ -10,6 +10,8 @@
 type ExtensionPreferences = {
   /** Gemini API Key - Enter your Gemini API key (e.g. from Google AI Studio) */
   "geminiApiKey": string,
+  /** Gemini Model - Select the Gemini model to use for definitions */
+  "geminiModel": "gemini-3.5-flash" | "gemini-2.5-flash" | "gemini-2.0-flash" | "gemini-2.0-pro" | "gemini-1.5-flash" | "gemini-1.5-pro",
   /** Words Storage Directory - Local directory path to save vocabulary markdown files */
   "wordsDirectory": string
 }
