@@ -1,0 +1,65 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "english-words-with-hindi",
+  "title": "English Words with Hindi",
+  "description": "A personal AI-powered vocabulary companion inside Raycast that saves words to a local database.",
+  "icon": "extension-icon.png",
+  "author": "harshdeepsinghin",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "know-about-words",
+      "title": "Vocabulary Companion",
+      "subtitle": "English Words with Hindi",
+      "description": "Look up English words with Gemini AI and save them to your local database",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "geminiApiKey",
+      "type": "password",
+      "title": "Gemini API Key",
+      "description": "Enter your Gemini API key (e.g. from Google AI Studio)",
+      "placeholder": "AIzaSyC7Ujqzex_yEIqewX5bRGSPOXCD5DDa0JY",
+      "required": true
+    },
+    {
+      "name": "wordsDirectory",
+      "type": "textfield",
+      "title": "Words Storage Directory",
+      "description": "Local directory path to save vocabulary markdown files",
+      "default": "~/words",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.19",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "react": "^19.2.6",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build && mkdir -p assets && cp .assets/extension-icon.png assets/extension-icon.png",
+    "dev": "mkdir -p assets && cp .assets/extension-icon.png assets/extension-icon.png && ray develop",
+    "fix-lint": "ray lint --fix",
+    "prelint": "mkdir -p assets && cp .assets/extension-icon.png assets/extension-icon.png",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
