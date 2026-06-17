@@ -71,6 +71,34 @@ run = [
   "resize width 420"
 ]
 
+# Gemini
+[[on-window-detected]]
+if.app-id = "com.google.GeminiMacOS"
+run = [
+  "layout floating"
+]
+
+# ChatGPT
+[[on-window-detected]]
+if.app-id = "com.openai.chat"
+run = [
+  "layout floating"
+]
+
+# Apple Reminders
+[[on-window-detected]]
+if.app-id = "com.apple.reminders"
+run = [
+  "layout floating"
+]
+
+# LocalSend
+[[on-window-detected]]
+if.app-id = "org.localsend.localsendApp"
+run = [
+  "layout floating"
+]
+
 [mode.main.binding]
 
     # All possible keys:
@@ -90,14 +118,61 @@ run = [
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 
-alt-b = '''
+# alt-b = '''
+# exec-and-forget osascript <<'APPLESCRIPT'
+# tell application "Safari"
+#     activate
+# 
+#     repeat with w in windows
+#         try
+#             if name of w starts with "Surfer" then
+#                 set index of w to 1
+#                 return
+#             end if
+#         end try
+#     end repeat
+# end tell
+# 
+# tell application "System Events"
+#     keystroke "0" using {command down, option down, shift down}
+# end tell
+# APPLESCRIPT
+# '''
+
+
+# alt-s = '''
+# exec-and-forget osascript <<'APPLESCRIPT'
+# tell application "Safari"
+#     activate
+# 
+#     repeat with w in windows
+#         try
+#             if name of w starts with "Scholar" then
+#                 set index of w to 1
+#                 return
+#             end if
+#         end try
+#     end repeat
+# end tell
+# 
+# tell application "System Events"
+#     keystroke "1" using {command down, option down, shift down}
+# end tell
+# APPLESCRIPT
+# '''
+
+alt-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Default"'
+
+alt-s = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 1"'
+
+alt-shift-b = '''
 exec-and-forget osascript <<'APPLESCRIPT'
 tell application "Safari"
     activate
 
     repeat with w in windows
         try
-            if name of w starts with "Surfer" then
+            if name of w starts with "professional" then
                 set index of w to 1
                 return
             end if
@@ -106,33 +181,11 @@ tell application "Safari"
 end tell
 
 tell application "System Events"
-    keystroke "0" using {command down, option down, shift down}
-end tell
-APPLESCRIPT
-'''
-
-alt-s = '''
-exec-and-forget osascript <<'APPLESCRIPT'
-tell application "Safari"
-    activate
-
-    repeat with w in windows
-        try
-            if name of w starts with "Scholar" then
-                set index of w to 1
-                return
-            end if
-        end try
-    end repeat
-end tell
-
-tell application "System Events"
-    keystroke "1" using {command down, option down, shift down}
+    keystroke "2" using {command down, option down, shift down}
 end tell
 APPLESCRIPT
 '''
     alt-enter = 'exec-and-forget open -na Ghostty'
-    alt-shift-b = 'exec-and-forget sleep 0.1 && open -a Firefox' 
     alt-f = 'fullscreen --no-outer-gaps'
     alt-shift-r = 'reload-config'
 
