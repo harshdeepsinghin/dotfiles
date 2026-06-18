@@ -28,12 +28,12 @@ on-mode-changed = []
     preset = 'qwerty'
 
 [gaps]
-    inner.horizontal = 7
-    inner.vertical =   7
-    outer.left =       7
-    outer.bottom =     7
-    outer.top =        7
-    outer.right =      7
+    inner.horizontal = 5
+    inner.vertical =   5
+    outer.left =       5
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      5
 
 [[on-window-detected]]
 if.app-name-regex-substring = "mpv|MPV"
