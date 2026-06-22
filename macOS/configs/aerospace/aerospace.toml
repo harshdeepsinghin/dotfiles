@@ -165,26 +165,28 @@ alt-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="D
 
 alt-s = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 1"'
 
-alt-shift-b = '''
-exec-and-forget osascript <<'APPLESCRIPT'
-tell application "Safari"
-    activate
+alt-shift-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 27"'
 
-    repeat with w in windows
-        try
-            if name of w starts with "professional" then
-                set index of w to 1
-                return
-            end if
-        end try
-    end repeat
-end tell
-
-tell application "System Events"
-    keystroke "2" using {command down, option down, shift down}
-end tell
-APPLESCRIPT
-'''
+# alt-shift-b = '''
+# exec-and-forget osascript <<'APPLESCRIPT'
+# tell application "Safari"
+#     activate
+# 
+#     repeat with w in windows
+#         try
+#             if name of w starts with "professional" then
+#                 set index of w to 1
+#                 return
+#             end if
+#         end try
+#     end repeat
+# end tell
+# 
+# tell application "System Events"
+#     keystroke "2" using {command down, option down, shift down}
+# end tell
+# APPLESCRIPT
+# '''
     alt-enter = 'exec-and-forget open -na Ghostty'
     alt-f = 'fullscreen --no-outer-gaps'
     alt-shift-r = 'reload-config'
