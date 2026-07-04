@@ -99,6 +99,13 @@ run = [
   "layout floating"
 ]
 
+# LocalSend
+[[on-window-detected]]
+if.app-id = "com.blackmagic-design.DaVinciResolveLite"
+run = [
+  "layout floating"
+]
+
 [mode.main.binding]
 
     # All possible keys:
