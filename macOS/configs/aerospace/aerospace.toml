@@ -106,6 +106,20 @@ run = [
   "layout floating"
 ]
 
+# Apple Preview
+[[on-window-detected]]
+if.app-id = "com.apple.Preview"
+run = [
+  "layout floating"
+]
+
+# UTM
+[[on-window-detected]]
+if.app-id = "com.utmapp.UTM"
+run = [
+  "layout floating"
+]
+
 [mode.main.binding]
 
     # All possible keys:
