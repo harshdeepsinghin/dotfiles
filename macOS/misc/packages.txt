@@ -4,15 +4,11 @@ fish
 mpv
 obsidian
 brave-browser
-firefox
 visual-studio-code
 yt-dlp
 p7zip
-alfred
 ghostty
-audacity
 fastfetch
-latest
 fzf
 coreutils
 tree
