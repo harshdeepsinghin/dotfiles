@@ -12,15 +12,15 @@ fastfetch
 fzf
 coreutils
 tree
-aerospace
-swipeaerospace
+nikitabobko/tap/aerospace
+mediosz/tap/swipeaerospace
 markedit
 sublime-text
 dropshelf
 ngrok
 fluidvoice
 syncplay
-tailscale-app
+telegram
 telegram-desktop
 bitwarden
 pearcleaner
@@ -40,8 +40,6 @@ mole
 neovim
 ollama
 tailscale
-tldr
-trivy
 localsend
 spotify
 stats
