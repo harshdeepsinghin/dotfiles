@@ -1,0 +1,260 @@
+tap "danielfiller30/tap", trusted: true
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "homebrew/services"
+tap "iilonmasc/powerlevel9k", "https://github.com/iilonmasc/homebrew-powerlevel9k.git", trusted: true
+tap "mediosz/tap", trusted: true
+tap "mongodb/brew", trusted: true
+tap "my/local-tap", trusted: true
+tap "nikitabobko/tap", trusted: true
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Bash Automated Testing System
+brew "bats-core"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Mozilla CA bundle for Python
+brew "certifi"
+# Cross-platform make
+brew "cmake"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# GitHub command-line tool
+brew "gh"
+# Command-line option parsing utility
+brew "gnu-getopt"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# CLI for Heroku
+brew "heroku"
+# Configurable static site generator
+brew "hugo"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
+# Convert images to PDF via direct JPEG inclusion
+brew "img2pdf"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Postgres C API library
+brew "libpq"
+# Java-based project management
+brew "maven"
+# Deep clean and optimize your Mac
+brew "mole"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Media player based on MPlayer and mplayer2
+brew "mpv"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Shell command parallelization utility
+brew "parallel"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Python version management
+brew "pyenv"
+# Python interface to Tcl/Tk
+brew "python-tk@3.14"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Generic machine emulator and virtualizer
+brew "qemu"
+# Ruby version manager
+brew "rbenv"
+# Command-line interface for Render
+brew "render"
+# Display and control your Android device
+brew "scrcpy"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# GTK client/libraries for SPICE
+brew "spice-gtk"
+# Postgres development platform
+brew "supabase"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
+# Modernized, complete, self-contained TeX/LaTeX engine
+brew "tectonic"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Vulnerability scanner for container images, file systems, and Git repos
+brew "trivy"
+# Interactive SQL shell for Turso
+brew "turso"
+# Command-line unarchiving tools supporting multiple formats
+brew "unar"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Command-line interface for Vercel
+brew "vercel"
+# Simple terminal image viewer written in Rust
+brew "viu"
+# Internet file retriever
+brew "wget"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# A window border system for macOS
+brew "felixkratz/formulae/borders"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
+# Android SDK component
+cask "android-platform-tools"
+# Memory training application
+cask "anki"
+# Multi-track audio editor and recorder
+cask "audacity"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "basictex"
+# Desktop password and login vault
+cask "bitwarden"
+# Virtual Audio Driver
+cask "blackhole-2ch"
+# Mobile gaming platform
+cask "bluestacks"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
+# Drag and drop helper app
+cask "dropshelf"
+# Desktop client for Ente Auth
+cask "ente-auth"
+# Web browser
+cask "firefox"
+# Offline voice-to-text dictation app with AI enhancement
+cask "fluidvoice"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Agent-centric IDE with spec-driven development
+cask "kiro"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# File system integration
+cask "macfuse"
+# Markdown editor
+cask "markedit"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Privacy-focused note taking app
+cask "notesnook"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Remote desktop
+cask "parsec"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
+# Peer to peer Bitorrent client
+cask "qbittorrent"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Browse and preview sounds from Splice’s entire catalog
+cask "splice"
+# Music streaming service
+cask "spotify"
+# System monitor for the menu bar
+cask "stats"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# SwipeAeroSpace is a tool to switch AeroSpace worksapces by swiping.
+cask "mediosz/tap/swipeaerospace"
+# Synchronises media players
+cask "syncplay"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Desktop client for Telegram messenger
+cask "telegram-desktop"
+# Epub reader
+cask "thorium"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+vscode "anthropic.claude-code"
+vscode "dart-code.dart-code"
+vscode "dart-code.flutter"
+vscode "esbenp.prettier-vscode"
+vscode "github.vscode-github-actions"
+vscode "ms-dotnettools.vscode-dotnet-modernize"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "redhat.java"
+vscode "repreng.csv"
+vscode "ritwickdey.liveserver"
+vscode "vscjava.migrate-java-to-azure"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-java-upgrade"
+vscode "vscjava.vscode-maven"
+go "golang.org/x/tools/gopls"
+uv "specify-cli", source: "git+https://github.com/github/spec-kit.git"
+npm "@bubblewrap/cli"
+npm "@expo/cli"
+npm "@expo/ngrok"
+npm "@microsoft/rush"
+npm "@raycast/api"
+npm "expo-cli"
+npm "react-native-cli"
+npm "vercel"
