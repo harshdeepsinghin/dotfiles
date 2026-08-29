@@ -19,6 +19,21 @@
       "subtitle": "English Words with Hindi",
       "description": "Look up English words with Gemini AI and save them to your local database",
       "mode": "view"
+    },
+    {
+      "name": "scheduled-list",
+      "title": "Telegram Scheduled Posts",
+      "subtitle": "English Words with Hindi",
+      "description": "View and manage scheduled vocabulary posts for Telegram",
+      "mode": "view"
+    },
+    {
+      "name": "schedule-checker",
+      "title": "Telegram Background Scheduler",
+      "subtitle": "English Words with Hindi",
+      "description": "Background worker to publish scheduled vocabulary words to Telegram channel",
+      "mode": "no-view",
+      "interval": "1m"
     }
   ],
   "preferences": [
@@ -45,22 +60,6 @@
         {
           "title": "Gemini 2.5 Flash",
           "value": "gemini-2.5-flash"
-        },
-        {
-          "title": "Gemini 2.0 Flash (Recommended)",
-          "value": "gemini-2.0-flash"
-        },
-        {
-          "title": "Gemini 2.0 Pro",
-          "value": "gemini-2.0-pro"
-        },
-        {
-          "title": "Gemini 1.5 Flash",
-          "value": "gemini-1.5-flash"
-        },
-        {
-          "title": "Gemini 1.5 Pro",
-          "value": "gemini-1.5-pro"
         }
       ]
     },
@@ -71,20 +70,36 @@
       "description": "Local directory path to save vocabulary markdown files",
       "default": "~/words",
       "required": false
+    },
+    {
+      "name": "telegramBotToken",
+      "type": "password",
+      "title": "Telegram Bot Token",
+      "description": "Enter your Telegram Bot API token (from @BotFather)",
+      "placeholder": "123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ",
+      "required": false
+    },
+    {
+      "name": "telegramChatId",
+      "type": "textfield",
+      "title": "Telegram Channel / Chat ID",
+      "description": "Enter your Telegram Channel username (e.g. @mychannel) or Chat ID",
+      "placeholder": "@mychannel",
+      "required": false
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.104.19",
-    "@raycast/utils": "^1.17.0"
+    "@raycast/api": "^1.104.24",
+    "@raycast/utils": "^2.2.7"
   },
   "devDependencies": {
-    "@raycast/eslint-config": "^2.0.4",
+    "@raycast/eslint-config": "^2.2.0",
     "@types/node": "22.19.17",
     "@types/react": "19.0.10",
     "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "react": "^19.2.6",
-    "typescript": "^5.8.2"
+    "prettier": "^3.9.6",
+    "typescript": "^5.8.2",
+    "vitest": "^4.1.10"
   },
   "scripts": {
     "build": "ray build && mkdir -p assets && cp .assets/extension-icon.png assets/extension-icon.png",
@@ -92,6 +107,7 @@
     "fix-lint": "ray lint --fix",
     "prelint": "mkdir -p assets && cp .assets/extension-icon.png assets/extension-icon.png",
     "lint": "ray lint",
+    "test": "vitest run",
     "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
     "publish": "npx @raycast/api@latest publish"
   }

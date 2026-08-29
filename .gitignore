@@ -88,3 +88,7 @@ develop-eggs/
 *.log
 .cache/
 tmp/
+
+# Swift / Xcode
+.build/
+DerivedData

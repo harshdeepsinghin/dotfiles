@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.lightningocr.daemon.plist
+  LaunchAgent for the LightningOCR daemon.
+
+  Install location: ~/Library/LaunchAgents/com.lightningocr.daemon.plist
+
+  The __INSTALL_DIR__ placeholder is replaced by install.sh with the
+  absolute path to the lightOCR project root.
+-->
+<plist version="1.0">
+<dict>
+  <!-- Service identifier -->
+  <key>Label</key>
+  <string>com.lightningocr.daemon</string>
+
+  <!-- Start at login and keep alive if it crashes -->
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+
+  <!-- Command: use the project venv Python to run server.py -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>__INSTALL_DIR__/daemon/.venv/bin/python</string>
+    <string>__INSTALL_DIR__/daemon/server.py</string>
+  </array>
+
+  <!-- Working directory -->
+  <key>WorkingDirectory</key>
+  <string>__INSTALL_DIR__/daemon</string>
+
+  <!-- Logs -->
+  <key>StandardOutPath</key>
+  <string>__INSTALL_DIR__/logs/daemon.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>__INSTALL_DIR__/logs/daemon.stderr.log</string>
+
+  <!-- Environment -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>LIGHTNINGOCR_SOCKET</key>
+    <string>/tmp/lightningocr.sock</string>
+    <key>LIGHTNINGOCR_LOG_LEVEL</key>
+    <string>INFO</string>
+    <key>LIGHTNINGOCR_CACHE</key>
+    <string>1</string>
+    <!-- Binary path for vision-ocr Swift helper -->
+    <key>LIGHTNINGOCR_VISION_BIN</key>
+    <string>__INSTALL_DIR__/native/.build/release/vision-ocr</string>
+  </dict>
+
+  <!-- Throttle restart interval (seconds) on repeated crashes -->
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+</dict>
+</plist>

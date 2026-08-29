@@ -20,11 +20,11 @@ Rules:
 Format:
 
 # Word (Hindi Pronunciation)
-**Noun:** short definition (≤20 words) (include ONLY if the word can be used as a noun)
-**Verb:** short definition (≤20 words) (include ONLY if the word can be used as a verb)
-**Adjective:** short definition (≤20 words) (include ONLY if the word can be used as an adjective)
-**Adverb:** short definition (≤20 words) (include ONLY if the word can be used as an adverb)
-(just like that all other types of part of speeches, above 4 are just examples) (and when multiple part of speeches exists, then break lines for each part of speech)
+- **Noun:** short definition (≤20 words) (include ONLY if the word can be used as a noun)
+- **Verb:** short definition (≤20 words) (include ONLY if the word can be used as a verb)
+- **Adjective:** short definition (≤20 words) (include ONLY if the word can be used as an adjective)
+- **Adverb:** short definition (≤20 words) (include ONLY if the word can be used as an adverb)
+(just like that all other types of part of speeches, above 4 are just examples) (and when multiple part of speeches exists, then use a list item "-" for each part of speech, so they are cleanly separated as list items. means no two part of speech on same line)
 
 ## Hindi Equivalent
 meaning1, meaning2, meaning3
