@@ -27,7 +27,6 @@ alias getip="ipconfig getifaddr en0"
 alias clsradio="mpv --no-video https://live.musopen.org:8085/streamvbr0"
 alias lofiradio="mpv --no-video https://www.youtube.com/c/LofiGirl"
 alias adbbkp="adb backup -apk -shared -all -f backup.ab"
-alias code="codium $argv"
 alias mkcd="mkdir $argv && cd $argv"
 alias sleepoff="sudo pmset -a disablesleep 1"
 alias sleepon="sudo pmset -a disablesleep 0"
@@ -310,3 +309,11 @@ function cpcode
 
     nvim +"edit main.cpp | vertical resize 95 | vsplit input.txt | vertical resize 35 | wincmd l | vsplit output.txt | vertical resize 35 | wincmd h | wincmd h | botright split | resize 12 | terminal"
 end
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
+
+# Added by Antigravity IDE
+fish_add_path /Users/ektara/.antigravity-ide/antigravity-ide/bin
+
+# Added by Antigravity IDE
+fish_add_path /Users/ektara/.antigravity-ide/antigravity-ide/bin
