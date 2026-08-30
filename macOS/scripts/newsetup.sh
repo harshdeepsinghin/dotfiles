@@ -24,6 +24,17 @@ WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 
 CONFIG_DIR="$HOME/.config"
 
+SSD="/Volumes/harsh-ssd"
+
+OLLAMA_SOURCE="$SSD/CS/development/ai-models"
+OLLAMA_DEST="$HOME/.ollama"
+
+GARAGEBAND_SOURCE="$SSD/Library/Application Support/GarageBand"
+GARAGEBAND_DEST="$HOME/Library/Application Support/GarageBand"
+
+LOGIC_SOURCE="$SSD/Library/Application Support/Logic"
+LOGIC_DEST="$HOME/Library/Application Support/Logic"
+
 # Leave empty to automatically detect:
 # id_ed25519.pub -> id_rsa.pub -> id_ecdsa.pub
 SSH_PUBLIC_KEY=""
