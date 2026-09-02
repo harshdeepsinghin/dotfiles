@@ -1,4 +1,5 @@
 ﻿fastfetch
+echo
 # CUSTOM PATHS
 
 ## configs
@@ -209,9 +210,6 @@ function clipgpt
 end
 
 
-set -Ux JAVA_HOME (/usr/libexec/java_home -v 11)
-set -gx JAVA_HOME (/usr/libexec/java_home -v 17)
-
 function wavdl
     if test (count $argv) -eq 0
         echo "Usage: wavdl <song name or YouTube link>"
@@ -310,10 +308,15 @@ function cpcode
     nvim +"edit main.cpp | vertical resize 95 | vsplit input.txt | vertical resize 35 | wincmd l | vsplit output.txt | vertical resize 35 | wincmd h | wincmd h | botright split | resize 12 | terminal"
 end
 
-string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
 
 # Added by Antigravity IDE
 fish_add_path /Users/ektara/.antigravity-ide/antigravity-ide/bin
 
 # Added by Antigravity IDE
 fish_add_path /Users/ektara/.antigravity-ide/antigravity-ide/bin
+
+function add_blank_line --on-event fish_postexec
+    if test "$argv[1]" != clear
+        echo
+    end
+end

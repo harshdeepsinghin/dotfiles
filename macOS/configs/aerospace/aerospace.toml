@@ -3,7 +3,8 @@ config-version = 2
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 after-startup-command = [
-    'exec-and-forget borders active_color=0xeeffffff width=6.5'
+    'exec-and-forget borders active_color=0xeeffffff width=6.5',
+    'exec-and-forget open -a /Applications/SwipeAeroSpace.app'
 ]
 
 start-at-login = true
@@ -182,11 +183,11 @@ run = [
 # APPLESCRIPT
 # '''
 
-alt-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Default"'
+alt-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 1"'
 
-alt-s = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 1"'
+alt-s = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 2"'
 
-alt-shift-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 27"'
+alt-shift-b = 'exec-and-forget open -na "Brave Browser" --args --profile-directory\="Profile 3"'
 
 # alt-shift-b = '''
 # exec-and-forget osascript <<'APPLESCRIPT'
