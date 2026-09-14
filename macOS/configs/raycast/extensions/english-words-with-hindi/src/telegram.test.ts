@@ -56,12 +56,12 @@ discount, refund
 describe("formatForTelegram", () => {
   it("formats title line with bold and 2 spaces line end", () => {
     const formatted = formatForTelegram(VIGNETTE_RAW_MD);
-    expect(formatted).toContain("**Vignette (विन्येट)**  ");
+    expect(formatted).toContain("**Vignette (विन्येट)** #word  ");
   });
 
   it("capitalizes lowercase word names in title", () => {
     const formatted = formatForTelegram(SINGLE_DEF_MD);
-    expect(formatted).toContain("**Rebate (री-बेट)**  ");
+    expect(formatted).toContain("**Rebate (री-बेट)** #word  ");
   });
 
   it("formats definitions inline under POS without numbering", () => {
@@ -179,35 +179,5 @@ describe("postToTelegramChannel", () => {
     );
     expect(res.success).toBe(false);
     expect(res.message).toContain("Invalid Telegram Bot Token");
-  });
-});
-
-describe("deleteTelegramMessage", () => {
-  const originalFetch = globalThis.fetch;
-
-  beforeEach(() => {
-    globalThis.fetch = vi.fn();
-  });
-
-  afterEach(() => {
-    globalThis.fetch = originalFetch;
-  });
-
-  it("calls deleteMessage endpoint on Telegram API", async () => {
-    (globalThis.fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => ({ ok: true }),
-    });
-
-    const { deleteTelegramMessage } = await import("./telegram");
-    const res = await deleteTelegramMessage("123:ABC", "@mychannel", 999);
-    expect(res.success).toBe(true);
-    expect(globalThis.fetch).toHaveBeenCalledWith(
-      "https://api.telegram.org/bot123:ABC/deleteMessage",
-      expect.objectContaining({
-        method: "POST",
-        body: JSON.stringify({ chat_id: "@mychannel", message_id: 999 }),
-      }),
-    );
   });
 });

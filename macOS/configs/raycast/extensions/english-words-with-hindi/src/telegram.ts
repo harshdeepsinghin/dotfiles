@@ -118,7 +118,7 @@ export function formatForTelegram(markdownContent: string): string {
   const resultBlocks: string[] = [];
 
   // Title line block
-  resultBlocks.push(`${titleText}  `);
+  resultBlocks.push(`${titleText} #word  `);
 
   // Definitions block
   if (posDefinitionsMap.size > 0) {
@@ -228,7 +228,7 @@ export async function postToTelegramChannel(
   botToken: string,
   chatId: string,
   telegramFormattedText: string,
-): Promise<{ success: boolean; messageId?: number; message?: string }> {
+): Promise<{ success: boolean; message?: string }> {
   const token = botToken.trim();
   const chat = chatId.trim();
 
@@ -263,15 +263,12 @@ export async function postToTelegramChannel(
       ok: boolean;
       description?: string;
       error_code?: number;
-      result?: {
-        message_id: number;
-      };
     }
 
     const data = (await response.json()) as TelegramResponse;
 
     if (response.ok && data.ok) {
-      return { success: true, messageId: data.result?.message_id };
+      return { success: true };
     }
 
     const errDesc =
@@ -299,55 +296,6 @@ export async function postToTelegramChannel(
     return {
       success: false,
       message: `Telegram Error (${data.error_code || response.status}): ${errDesc}`,
-    };
-  } catch (err) {
-    return {
-      success: false,
-      message: err instanceof Error ? err.message : String(err),
-    };
-  }
-}
-
-/**
- * Deletes a message from a Telegram channel/chat using Telegram Bot API.
- */
-export async function deleteTelegramMessage(
-  botToken: string,
-  chatId: string,
-  messageId: number,
-): Promise<{ success: boolean; message?: string }> {
-  const token = botToken.trim();
-  const chat = chatId.trim();
-
-  if (!token || !chat || !messageId) {
-    return { success: false, message: "Missing required parameters." };
-  }
-
-  try {
-    const url = `https://api.telegram.org/bot${token}/deleteMessage`;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: chat,
-        message_id: messageId,
-      }),
-    });
-
-    const data = (await response.json()) as {
-      ok: boolean;
-      description?: string;
-    };
-
-    if (response.ok && data.ok) {
-      return { success: true };
-    }
-
-    return {
-      success: false,
-      message: data.description || `HTTP ${response.status}`,
     };
   } catch (err) {
     return {

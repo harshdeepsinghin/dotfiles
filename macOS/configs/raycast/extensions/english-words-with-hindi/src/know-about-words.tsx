@@ -22,9 +22,6 @@ import { exec, execFile } from "child_process";
 import { promisify } from "util";
 import { SWIFT_LOOKUP_CODE } from "./lookup-swift";
 import { formatForTelegram, postToTelegramChannel } from "./telegram";
-import { ScheduleForm } from "./schedule-form";
-import { ScheduledList } from "./scheduled-list";
-import { processPendingPosts } from "./scheduler";
 
 const execFilePromise = promisify(execFile);
 const execPromise = promisify(exec);
@@ -428,15 +425,6 @@ export default function Command() {
   useEffect(() => {
     async function initAndLoad() {
       try {
-        if (preferences.telegramBotToken && preferences.telegramChatId) {
-          processPendingPosts(
-            preferences.telegramBotToken.trim(),
-            preferences.telegramChatId.trim(),
-          ).catch((err) =>
-            console.error("Background scheduled check error:", err),
-          );
-        }
-
         await fs.mkdir(wordsDir, { recursive: true });
         const files = await fs.readdir(wordsDir);
         const mdFiles = files.filter((file) => file.endsWith(".md"));
@@ -990,23 +978,6 @@ export default function Command() {
                         wordItem.content,
                       )
                     }
-                  />
-                  <Action.Push
-                    title="Schedule for Telegram…"
-                    icon={Icon.Calendar}
-                    shortcut={Keyboard.Shortcut.Common.Save}
-                    target={
-                      <ScheduleForm
-                        wordName={wordItem.name}
-                        markdownContent={wordItem.content}
-                      />
-                    }
-                  />
-                  <Action.Push
-                    title="View Scheduled Posts"
-                    icon={Icon.Clock}
-                    shortcut={{ modifiers: ["ctrl"], key: "l" }}
-                    target={<ScheduledList />}
                   />
                   <Action
                     title="Copy Markdown"

@@ -26,18 +26,10 @@ declare type Preferences = ExtensionPreferences
 declare namespace Preferences {
   /** Preferences accessible in the `know-about-words` command */
   export type KnowAboutWords = ExtensionPreferences & {}
-  /** Preferences accessible in the `scheduled-list` command */
-  export type ScheduledList = ExtensionPreferences & {}
-  /** Preferences accessible in the `schedule-checker` command */
-  export type ScheduleChecker = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
   /** Arguments passed to the `know-about-words` command */
   export type KnowAboutWords = {}
-  /** Arguments passed to the `scheduled-list` command */
-  export type ScheduledList = {}
-  /** Arguments passed to the `schedule-checker` command */
-  export type ScheduleChecker = {}
 }
 
