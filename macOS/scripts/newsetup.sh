@@ -470,28 +470,6 @@ else
 fi
 
 # ============================================================
-# SYNCPLAY
-# ============================================================
-
-print_header "CONFIGURING SYNCPLAY"
-
-SYNCPLAY_SOURCE="$DOTFILES_DIR/macOS/configs/syncplay.ini"
-SYNCPLAY_DEST="$CONFIG_DIR/syncplay.ini"
-
-if [[ -f "$SYNCPLAY_SOURCE" ]]; then
-
-    link_config \
-        "$SYNCPLAY_SOURCE" \
-        "$SYNCPLAY_DEST"
-
-else
-
-    print_warning "Syncplay config not found:"
-    printf '  %s\n' "$SYNCPLAY_SOURCE"
-
-fi
-
-# ============================================================
 # RAYCAST
 # ============================================================
 

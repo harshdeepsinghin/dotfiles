@@ -98,9 +98,6 @@ ln -s ~/gitrepos/dotfiles/macOS/configs/fastfetch/ ~/.config/
 rm -rf ~/.config/aerospace
 ln -s ~/gitrepos/dotfiles/macOS/configs/aerospace ~/.config/
 
-rm -rf ~/.config/syncplay.ini
-ln -s ~/gitrepos/dotfiles/macOS/configs/syncplay.ini ~/.config/syncplay.ini
-
 rm -rf ~/.config/raycast
 ln -s ~/gitrepos/dotfiles/macOS/configs/raycast/ ~/.config/raycast
 
