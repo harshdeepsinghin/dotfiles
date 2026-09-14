@@ -31,6 +31,8 @@ alias adbbkp="adb backup -apk -shared -all -f backup.ab"
 alias mkcd="mkdir $argv && cd $argv"
 alias sleepoff="sudo pmset -a disablesleep 1"
 alias sleepon="sudo pmset -a disablesleep 0"
+alias python="python3"
+alias pip="pip3"
 
 ## CUSTOM FUNCTIONS
 
