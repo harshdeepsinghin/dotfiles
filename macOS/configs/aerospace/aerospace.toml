@@ -121,6 +121,13 @@ run = [
   "layout floating"
 ]
 
+# MarkEdit
+[[on-window-detected]]
+if.app-id = "app.cyan.markedit"
+run = [
+  "layout floating"
+]
+
 [mode.main.binding]
 
     # All possible keys:
