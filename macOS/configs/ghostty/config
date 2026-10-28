@@ -20,3 +20,5 @@ macos-option-as-alt = true
 # keybinds
 
 keybind = alt+n=new_window
+keybind = cmd+enter=unbind
+
